@@ -3,7 +3,7 @@ rubyの問題文をクイズ形式で出し合い理解を深めるゲーム(自
 単語帳のように気軽に使う事ができ、覚えて置きたいメソッドや型を理解できる
 
 
-# アプリの使用
+# アプリの仕様
 - (1)ユーザーが問題を投稿、削除、編集ができる
 - (2)ユーザーが問題をとく事ができる
 - (3)ユーザーが答えとその問題のポイントをしる事ができる
@@ -42,9 +42,12 @@ rubyの問題文をクイズ形式で出し合い理解を深めるゲーム(自
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
+
+- belong_to :user
 - has_many :comments
 - has_many :evaluations
-- belong_to :user
+- has_many :tweet_tags
+- has_many :tags, through: :tweet_tags
 
 
 # commentsテーブル
@@ -72,3 +75,27 @@ rubyの問題文をクイズ形式で出し合い理解を深めるゲーム(自
 - belongs_to :tweet
 - belongs_to :user
 
+# tagテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|tag|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+
+
+### Association
+- belong_to :user
+- has_many :tweet_tags
+- has_many :tweets, through: :tweet_tags
+
+# tweet_tagテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|tweet_id|references|null: false, foreign_key: true|
+|tag_id|references|null: false, foreign_key: true|
+
+
+### Association
+- belong_to :tweet
+- belong_to :tag
