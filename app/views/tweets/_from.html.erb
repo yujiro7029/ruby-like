@@ -1,0 +1,22 @@
+<div class="contents row">
+  <div class="container">
+
+  <% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+  
+  <%= form_for @tweet do |f| %>
+    <h3>
+      投稿する
+    </h3> 
+    <ul>
+      <li><%= f.text_field :title,placeholder: "タイトルを記入する", rows: "5",cols: "200"%></li>
+      <li><%= f.text_area :content,placeholder: "ここに問題文を投稿する", rows: "20",cols: "200"%></li>
+      <li><%= f.text_area :point, placeholder: "ここにポイントを記載してもらう", rows: "20",cols: "200" %> </li>
+       <li><%= f.submit "SENT" %> </li>
+     </ul>
+  <% end %>
+  </div>
+</div>
+
+
