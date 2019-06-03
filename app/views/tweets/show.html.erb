@@ -3,7 +3,7 @@
   <div class="content_question">
   <p>問題文</p>
   <div class="content_problem">
-  <%=@tweet.content%>
+  <%=sanitize markdown(@tweet.content)%>
   </div>
   </div>
   <div class="content_question">

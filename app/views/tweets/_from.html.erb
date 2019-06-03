@@ -1,21 +1,23 @@
-<div class="contents row">
-  <div class="container">
-
+<div class="content">
   <% if flash[:notice] %>
   <p><%= flash[:notice] %></p>
-<% end %>
-  
-  <%= form_for @tweet do |f| %>
-    <h3>
-      投稿する
-    </h3> 
-    <ul>
-      <li><%= f.text_field :title,placeholder: "タイトルを記入する", rows: "5",cols: "200"%></li>
-      <li><%= f.text_area :content,placeholder: "ここに問題文を投稿する", rows: "20",cols: "200"%></li>
-      <li><%= f.text_area :point, placeholder: "ここにポイントを記載してもらう", rows: "20",cols: "200" %> </li>
-       <li><%= f.submit "SENT" %> </li>
-     </ul>
   <% end %>
+  <div class="content__from">
+   <%= form_for @tweet do |f| %>
+    <h3 class="content__theme">投稿フォーム</h3>
+    <div class="content__title"> 
+      <%= f.text_area :title,value: "\n~~~\n文字を入力\n~~~", rows: "5",cols: "200"%>
+    </div>
+    <div class="content__content">
+      <%= f.text_area :content,value: "\n\n\n\n\n~~~\n問題を入力\n~~~", rows: "20",cols: "200"%>
+    </div>
+    <div class="content__point">
+      <%= f.text_area :point, value: "\n\n\n\n\n~~~\n- ポイント１\n- ポイント2\n- ポイント3\n~~~", rows: "20",cols: "200" %>
+    </div>
+    <div class="content__button">
+      <%= f.submit "SENT" %> 
+    </div>
+   <% end %>
   </div>
 </div>
 
