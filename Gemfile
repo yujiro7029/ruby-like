@@ -69,3 +69,5 @@ gem 'devise'
 gem "font-awesome-rails"
 gem 'kaminari'
 gem 'bootstrap', '~> 4.3.1'
+gem 'redcarpet'
+gem 'rouge'

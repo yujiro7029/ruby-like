@@ -2,12 +2,11 @@
   <p><%= flash[:notice] %></p>
 <% end %>
 
-ここは一覧表示だよ
 <%= link_to "新規投稿", new_tweet_path %>
 <div class="content">
-　<% @tweets.each do |tweet| %>
+ <% @tweets.each do |tweet| %>
    <div class="content_message">
-    <div class="content_message_text"><%=tweet.title%>
+    <div class="content_message_text"><%= sanitize markdown(tweet.content)%>
     </div>
     <div class="content_message_option">
     <%= link_to "削除", tweet_path(tweet), method: :delete %>
@@ -17,4 +16,3 @@
    </div>
   <%end%>
 </div>
-   
