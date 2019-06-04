@@ -16,11 +16,11 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.create(tweet_params)
     if @tweet.save
-    flash[:notice] = '投稿できました。'
-    redirect_to action: :index
+      flash[:notice] = '投稿できました。'
+      redirect_to action: :index
     else
-    flash[:notice] = 'メッセージを入力してください。'
-    redirect_to action: :new
+      flash[:notice] = 'メッセージを入力してください。'
+      redirect_to action: :new
     end
   end
 
@@ -31,7 +31,7 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @tweet = Tweet.find(params[:id])
+    @tweet  = Tweet.find(params[:id])
   end
 
   def new

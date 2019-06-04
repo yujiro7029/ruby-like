@@ -3,7 +3,7 @@
   <p><%= flash[:notice] %></p>
   <% end %>
   <div class="content__from">
-   <%= form_for @tweet do |f| %>
+   <%= form_for @tweet, url:tweets_path,method: :post do |f| %>
     <h3 class="content__theme">投稿フォーム</h3>
     <div class="content__title"> 
       <%= f.text_area :title,value: "\n~~~\n文字を入力\n~~~", rows: "5",cols: "200"%>
