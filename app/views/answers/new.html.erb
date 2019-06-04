@@ -1,4 +1,5 @@
- <%= form_for @answer, url: tweet_answer_path,method: :post do |f| %>
+ 
+   <%= form_for @answer, url: tweet_answer_path,method: :post do |f| %>
     <h3 class="content__theme">投稿フォーム</h3>
     <div class="content__content">
       <%= f.text_area :content,value: "\n\n\n\n\n~~~\n問題を入力\n~~~", rows: "20",cols: "200"%>

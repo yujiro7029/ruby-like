@@ -1,19 +1,26 @@
 class AnswersController < ApplicationController
   
+ 
+  
+  def show
+  end
+  
+  
   def new
     @answer = Answer.new
   end
 
   def create
     @answer = Answer.create(answer_params)
-    redirect_to action: :show
+    @answer = Answer.find(@answer.id)
+    @answer = @answer.content
+
+    @tweet =  Tweet.find(params[:tweet_id])
+    @tweet_content = @tweet.content
+    @tweet_point = @tweet.point
+    render action: :show
   end
 
-
-  def show
- @tweet =  Tweet.find(params[:tweet_id])
-#  @answer = Answer.find(params[:tweet_id]) 
-  end
 end
 
 

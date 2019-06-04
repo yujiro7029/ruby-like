@@ -1,12 +1,12 @@
 <%=link_to "問題の一覧に戻る",root_path%>
 
-<div class="content">
-  <h3>答え</h3>
-  <%=sanitize markdown(@tweet.content)%>
-  <h3>あなたの回答</h3>
-  <%=%>
-  <h3>ポイント</h3>
-  <%=sanitize markdown(@tweet.point)%>
-  <%=%>
-</div>
 
+<div class="content">
+<h3>答え</h3>
+<%=sanitize markdown(@tweet_content)%>
+<h3>あなたの回答</h3>
+<div class="syusei"><%=(@answer)%></div>
+<h3>ポイント</h3>
+<%=sanitize markdown(@tweet_point)%>
+<%=%>
+</div>
