@@ -13,6 +13,18 @@ class TweetsController < ApplicationController
     redirect_to action: :index
   end
 
+ def update
+  @tweet = Tweet.update(tweet_params)
+  flash[:notice] = '編集できました。' if @tweet.save
+  redirect_to action: :index
+ end
+
+
+
+
+
+
+
   def create
     @tweet = Tweet.create(tweet_params)
     if @tweet.save
