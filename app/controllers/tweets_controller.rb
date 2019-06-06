@@ -20,11 +20,6 @@ class TweetsController < ApplicationController
  end
 
 
-
-
-
-
-
   def create
     @tweet = Tweet.create(tweet_params)
     if @tweet.save
@@ -42,9 +37,7 @@ class TweetsController < ApplicationController
     redirect_to action: :index
   end
 
-  def show
-    @tweet  = Tweet.find(params[:id])
-  end
+
 
   def new
    @tweet = Tweet.new

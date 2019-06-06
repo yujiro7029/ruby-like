@@ -1,15 +1,19 @@
- 
-  <h3 class="content__theme">ここにJSを組み込んで表示させる</h3>
-  <div class="content__content">
-  <textarea name="kanso" rows="20" cols="200">打ち込んだ内容がmarkdounで表示されるんや。</textarea>
+
+<div class="container-fluid">
+  <p>問題文</p>
+  <%=sanitize markdown(@tweet.content)%>
+  <div class="row">
+    <div class="col-xs-6 col-lg-6">
+      <%= form_for @answer, url: tweet_answers_path(@answer.tweet.id,@answer.id),method: :post do |f| %>
+      <h5 class="content__theme">回答を入力して下さい</h5>
+      <%= f.text_area :content,value: "\n\n\n~~~\n問題を入力\n~~~", rows: "20",cols: "90"%>
+    </div>
+    <div class= "col-xs-6 col-lg-6">
+      <h5 class="content__theme">ここにJSを組み込んで表示させる</h5>
+      <textarea name="kanso" rows="20" cols="90">打ち込んだ内容がmarkdounで表示されるんや。</textarea>
+    </div>
+     <%= f.submit "送信" %> 
+    <% end %>
   </div>
-   <%= form_for @answer, url: tweet_answers_path(@answer.tweet_id),method: :post do |f| %>
-    <h3 class="content__theme">投稿フォーム</h3>
-    <div class="content__content">
-      <%= f.text_area :content,value: "\n\n\n\n\n~~~\n問題を入力\n~~~", rows: "20",cols: "200"%>
-    </div>
-       <div class="content__button">
-      <%= f.submit "SENT" %> 
-    </div>
-   <% end %>
   
+</div>

@@ -1,27 +1,28 @@
-<div class="content">
-  <% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
+<div class="container-fluid">
+ <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
   <% end %>
-  <div class="content__from">
-   <%= form_for @tweet do |f| %>
-    <h3 class="content__theme">投稿フォーム</h3>
-    <div class="content__title"> 
-    <p>タイトルを入力</p>
-      <%= f.text_area :title,value: @tweet.title,placeholder: '      ~~~ ~~~    で囲む', rows: "5",cols: "200" %>
-    </div>
-    <div class="content__content">
-    <p>問題文を入力</p>
-      <%= f.text_area :content,value: @tweet.content,placeholder: '      ~~~ ~~~    で囲む', rows: "20",cols: "200"%>
-    </div>
-    <div class="content__point">
-    <p>ポイントを入力</p>
-      <%= f.text_area :point, value: @tweet.point,placeholder: '      ~~~ ~~~    で囲む', rows: "20",cols: "200" %>
-    </div>
-    <div class="content__button">
-      <%= f.submit "SENT" %> 
-    </div>
-   <% end %>
+  <div class="row">
+    <%= form_for @tweet do |f| %>
+      <div class="col-xs-12 col-lg-4">
+        <p>タイトルを入力</p>
+        <%= f.text_area :title,value: @tweet.title,placeholder: '      ~~~ ~~~    で囲む', rows: "5",cols: "50" %>
+      </div> 
+      
+       <div class="col-xs-12 col-lg-4">
+        <p>ポイントを入力</p>
+        <%= f.text_area :point, value: @tweet.point,placeholder: '      ~~~ ~~~    で囲む', rows: "5",cols: "100" %>
+      </div> 
+
+      <div class="col-xs-12 col-lg-4">
+        <p>問題文を入力</p>
+        <%= f.text_area :content,value: @tweet.content,placeholder: '      ~~~ ~~~    で囲む', rows: "10",cols: "120"%>
+      </div>  
+     <%= f.submit "送信" %>
+     <% end %>
   </div>
 </div>
+
+
 
 

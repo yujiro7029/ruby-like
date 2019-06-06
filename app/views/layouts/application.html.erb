@@ -10,16 +10,8 @@
   </head>
 
   <body>
-  <header>
- <%= link_to "新規投稿", new_tweet_path %>
- <%= link_to "一覧画面に戻る", root_path %>
- 
-
-
-
-
-  </header>
-
+    <%=render './layouts/header'%>
     <%= yield %>
   </body>
 </html>
+

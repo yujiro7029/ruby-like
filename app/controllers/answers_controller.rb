@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
   
  def index  
-  binding.pry
+redirect_to new_tweet_answer_path
  end
   
   def show
@@ -9,7 +9,7 @@ class AnswersController < ApplicationController
     @tweet = Tweet.find(params[:tweet_id])
   end
   
-  
+
   def new
     @answer = Answer.new
     @tweet = Tweet.find(params[:tweet_id])
@@ -28,5 +28,5 @@ end
 private
 
 def answer_params
-params.require(:answer).permit(:content, :tweet_id).merge(tweet_id: params[:tweet_id])
+  params.require(:answer).permit(:content, :tweet_id).merge(tweet_id: params[:tweet_id])
 end
