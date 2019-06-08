@@ -1,19 +1,18 @@
 
 <div class="container-fluid">
   <p>問題文</p>
-  <%=sanitize markdown(@tweet.content)%>
+  <%=sanitize markdown(@tweet.title)%>
   <div class="row">
     <div class="col-xs-6 col-lg-6">
       <%= form_for @answer, url: tweet_answers_path(@answer.tweet.id,@answer.id),method: :post do |f| %>
-      <h5 class="content__theme">回答を入力して下さい</h5>
-      <%= f.text_area :content,value: "\n\n\n~~~\n問題を入力\n~~~", rows: "20",cols: "90"%>
+      <h5>回答を入力して下さい</h5>
+       <div class="form-group"><%= f.text_area :content, class:"form-control",type:"text"%></div>
     </div>
-    <div class= "col-xs-6 col-lg-6">
-      <h5 class="content__theme">ここにJSを組み込んで表示させる</h5>
-      <textarea name="kanso" rows="20" cols="90">打ち込んだ内容がmarkdounで表示されるんや。</textarea>
+    <div class= "col-xs-6 col-lg-6" id="form-text">
+      <h4>入力内容が更新</h4>
     </div>
-     <%= f.submit "送信" %> 
+    <div class="form-group"><%= f.submit "送信",class:"form-control"%></div>
     <% end %>
   </div>
-  
 </div>
+
