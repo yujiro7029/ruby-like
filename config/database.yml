@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: ruby-like_production
-  username: ruby-like
+  username: root
   password: <%= ENV['RUBY-LIKE_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
