@@ -1,0 +1,15 @@
+.container-fluid
+  - if flash[:notice]
+    %p= flash[:notice]
+  .row
+    = form_for @tweet do |f|
+      .col-xs-12.col-lg-4
+        %p タイトルを入力
+        = f.text_area :title,value: @tweet.title,placeholder: '      ~~~ ~~~    で囲む', rows: "5",cols: "50"
+      .col-xs-12.col-lg-4
+        %p ポイントを入力
+        = f.text_area :point, value: @tweet.point,placeholder: '      ~~~ ~~~    で囲む', rows: "5",cols: "100"
+      .col-xs-12.col-lg-4
+        %p 問題文を入力
+        = f.text_area :content,value: @tweet.content,placeholder: '      ~~~ ~~~    で囲む', rows: "10",cols: "120"
+      = f.submit "送信"

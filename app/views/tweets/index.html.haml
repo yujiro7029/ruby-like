@@ -1,0 +1,11 @@
+- if flash[:notice]
+  %p= flash[:notice]
+.container-fluid
+  .row
+    - @tweets.each do |tweet|
+      .col-xs-12.col-lg-4
+        = sanitize markdown(tweet.title)
+        .content_message_option
+          %button.btn.btn-default{:type => "button"}= link_to "削除", tweet_path(tweet.id), method: :delete
+          %button.btn.btn-default{:type => "button"}= link_to "編集", edit_tweet_path(tweet.id)
+          %button.btn.btn-default{:type => "button"}= link_to "問題を解く",tweet_answers_path(tweet.id)

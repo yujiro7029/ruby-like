@@ -40,7 +40,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
-  
+
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
@@ -79,3 +79,4 @@ gem 'kaminari'
 gem 'bootstrap', '~> 4.3.1'
 gem 'redcarpet'
 gem 'rouge'
+gem 'haml-rails'
