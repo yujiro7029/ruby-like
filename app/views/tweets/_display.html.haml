@@ -1,0 +1,11 @@
+.problem-box
+  .problem-box__text
+    %p.problem-box__text=tweet.title
+  .problem-box__option
+    = link_to tweet_path(tweet.id), method: :delete,class:"problem-box__option__box" do
+      =fa_icon("trash",class:"problem-box__option__box__text-delete")
+    = link_to edit_tweet_path(tweet.id),class:"problem-box__option__box" do
+      =fa_icon("edit",class:"problem-box__option__box__text-edit")
+    = link_to "回答", tweet_answers_path(tweet.id),class:"problem-box__option__box__text-anawer"
+    =fa_icon("heart",class:"problem-box__option__box__text-like")
+    %span.problem-box__option__box__text-like 1

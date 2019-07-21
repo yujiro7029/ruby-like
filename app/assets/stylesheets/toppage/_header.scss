@@ -1,0 +1,57 @@
+header{
+  display: flex;
+  margin: 30px 0 0 0;
+}
+.main-left{
+  padding:5px 0 0 0;
+  height: 100px;
+  font-size: 40px;
+  width: 20%;
+  color: pink;
+  text-align: center;
+    &__text{
+      text-decoration: none;
+    }
+    &__comment{
+      font-size: 15px;
+      font: bold;
+      color: black;
+    }
+}
+.main-right{
+  height: 100px;
+  width: 80%;
+    &__mypage{
+      padding:0 10px 0 0;
+      width: 90%;
+      text-align: right;
+    }
+}
+
+// 検索フォームの要素
+
+// 全体の要素
+.main-right__search-box{
+  margin: 5px 0 0 0;
+
+}
+// 検索フォーム
+input.main-right__search-box {
+  width: 90%;
+  height: 40px;
+  padding-left: 20px;
+}
+// アイコン
+i.fa.fa-search.fa-search-icon {
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+// マイページの画像
+
+.main-right__mypage__image{
+  margin:5px 5px 0 0;
+  width: 50px;
+  height: 40px;
+  border-radius: 50% 50% 50% 50%;
+}

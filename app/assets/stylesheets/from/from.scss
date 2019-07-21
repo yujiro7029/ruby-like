@@ -1,0 +1,77 @@
+.from-boxs {
+  text-align: center;
+  margin: 0 300px 0 300px;
+    &__box{
+      margin: 50px 0 50px 0;
+      &__from{
+        width: 600px;
+        height: 150px;
+      }
+      &__titles{
+        display: flex;
+        font-weight: bold;
+        margin: 0 0 20px 225px;
+          &__require{
+            color: white;
+            background-color: red;
+            padding:0 20px 0 0;
+
+          }
+      }
+    }
+}
+
+// 送信ボタン
+input.from-boxs__box__from {
+height: 50px;
+color: white;
+background-color: red;
+}
+
+// 戻るボタン
+h2.from-boxs__back {
+  text-align: center;
+  font-size: large;
+  background-color: gray;
+  line-height: 3;
+  margin: 0 700px 0 700px;
+  color:white;
+}
+
+a.from-boxs__back {
+  color: white;
+}
+
+// 入力タイトル
+p.from-boxs__title {
+  margin: 0 0 0 225px;
+}
+
+// selectフォーム
+
+.select-boxs{
+  text-align: center;
+  margin:100px 0 0 0;
+  font-size: 30px;
+    &__box{
+      text-align: -webkit-center;
+    }
+}
+
+
+// セレクトタブ
+
+h1.select-boxs__box__link {
+  margin: 0 0 30px 0;
+}
+
+
+h2.select-boxs__box__link {
+  line-height: 4;
+  background: blue;
+  color: white;
+  width: 500px;
+  text-align: center;
+  margin:50px 0px 50px 0px;
+  border-radius: 40px;
+}

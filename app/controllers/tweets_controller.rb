@@ -1,6 +1,8 @@
 class TweetsController < ApplicationController
+
+
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.all.limit(4)
   end
 
   def edit
@@ -42,11 +44,17 @@ class TweetsController < ApplicationController
   def new
    @tweet = Tweet.new
   end
-end
 
-
+  def select
+  end
+  
 private
 
-def tweet_params
-params.require(:tweet).permit(:content, :point, :title)
+  def tweet_params
+  params.require(:tweet).permit(:content, :point, :title)
+  end
+
 end
+
+
+

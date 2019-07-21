@@ -1,5 +1,13 @@
-%nav.navbar.navbar-default
-  .container-fluid
-    .navbar-header
-      = link_to "Ruby-Like",root_path
-      = link_to "新規投稿",new_tweet_path
+.container-fluid
+  %header
+    .main-left
+      =fa_icon("heart")
+      = link_to "RUBY-LIKE",root_path,class:"main-left__text"
+      %p.main-left__comment 問題を解いて好きになろう
+    .main-right
+      .main-right__search-box
+        %input.main-right__search-box{name:"keyword",placeholder:"何かお探しですか？"}
+        =fa_icon("search search-icon")
+      .main-right__mypage
+        =image_tag("toppage/toppage-cat",class:"main-right__mypage__image")
+        =link_to "ユーザー名",root_path
