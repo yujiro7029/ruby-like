@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root 'tweets#index'
   resources :tweets do
     collection do
-      get 'select'
+      get "1/description", to:"tweets#description", as: :description
+      get "2/select", to:"tweets#select", as: :select
     end
     resources :answers, only:[:index,:update,:destory,:show,:create,:new]
   end

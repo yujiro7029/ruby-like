@@ -23,9 +23,10 @@ class TweetsController < ApplicationController
 
 
   def create
+ 
     @tweet = Tweet.create(tweet_params)
     if @tweet.save
-      flash[:notice] = '投稿できました。'
+      flash[:notice] = '投稿できました'
       redirect_to action: :index
     else
       flash[:notice] = 'メッセージを入力してください。'
@@ -42,16 +43,25 @@ class TweetsController < ApplicationController
 
 
   def new
-   @tweet = Tweet.new
   end
+   
 
+  # 選択問題
   def select
   end
+
+  # 記述問題
+  def description
+    @tweet = Tweet.new
+  end
+
+
+
   
 private
 
   def tweet_params
-  params.require(:tweet).permit(:content, :point, :title)
+    params.require(:tweet).permit(:content, :point, :title,:type_problem)
   end
 
 end
