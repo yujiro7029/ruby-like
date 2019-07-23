@@ -5,6 +5,11 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all.limit(4)
   end
 
+  def show
+    @tweet = Tweet.find(params[:id])   
+    @comments = Comment.all.limit(3)
+  end
+
   def edit
     @tweet = Tweet.find(params[:id])
   end
@@ -48,6 +53,7 @@ class TweetsController < ApplicationController
 
   # 選択問題
   def select
+    @tweet = Tweet.new
   end
 
   # 記述問題
@@ -61,7 +67,7 @@ class TweetsController < ApplicationController
 private
 
   def tweet_params
-    params.require(:tweet).permit(:content, :point, :title,:type_problem)
+    params.require(:tweet).permit(:content, :point,:title,:type_problem,:select_problem1,:select_problem2,:select_problem3,:select_problem4,:select_problem5)
   end
 
 end

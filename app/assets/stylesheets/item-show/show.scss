@@ -1,0 +1,111 @@
+.list-boxs{
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  width: 100%;
+  
+    &__head{
+      display: flex;
+      margin: 0 auto;
+      display: flex;
+      width: 40%;
+        &__user-image{
+          width:200px;
+          height: 180px;
+          margin: 0 20px 0 0;
+        }
+        &__list-details{
+            &__table{
+                &__td{
+                  width: 150px;
+                  font-size: 15px;
+                  line-height: 3;
+                }
+            }
+        }
+    }
+    &__under{
+      width: 40%;
+      margin: 0 auto;
+      word-wrap: break-word;
+      text-align: left;
+      line-height: 3;
+        &__point{
+          min-height:300px; 
+          padding: 0.5em 1em;
+          margin: 2em 0;
+          font-weight: bold;
+          color: #6091d3;/*文字色*/
+          background: #FFF;
+          border: solid 3px #6091d3;/*線*/
+          border-radius: 10px;/*角の丸み*/
+        }
+        &__theme{
+        }
+        &__like-flag-boxs{
+          display: flex;
+            &__like{
+              border-radius:50%;
+              margin: 0 0 0 0;
+              background-color: blue;
+              color: white;
+              padding:0 10px 0 10px;
+                &__number{
+                  margin: 0 0 0 10px;
+                }
+            }
+            &__flag{
+              border-radius:50%;
+              margin: 0 0 0 10px;
+              background-color: blue;
+              color: white;
+              padding:0 10px 0 10px;
+
+            }
+        }
+    }
+    &__comment{
+      width: 40%;
+      margin: 50px auto;
+    }
+}
+
+h1.list-boxs__head__title {
+  line-height: 5;
+}
+
+// 回答ボタン
+h2.list-boxs__head__link {
+  display: inline-block;
+  line-height: 3;
+  width: 40%;
+  margin: 40px auto;
+  background-color: red;
+}
+a.list-boxs__head__link {
+  color:white;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+// フラグといいねボタン
+span.list-boxs__under__like-flag-boxs__like__number {
+  color: white; 
+}
+
+
+// コメントボタン
+.list-boxs__comment-buttom {
+  display: inline-block;
+  line-height: 2;
+  width: 40%;
+  margin: 40px auto;
+  background-color: blanchedalmond;
+}
+
+a.list-boxs__comment-buttom {
+  color:black;
+  font-size: 20px;
+  font-weight: bold;
+}

@@ -1,0 +1,13 @@
+- if flash[:notice]
+  %p.flash= flash[:notice]
+.container-fluid
+  .from-boxs
+    = form_for [@tweet,@comment] do |f|
+      .from-boxs__box
+        .from-boxs__box__titles
+          %p.from-boxs__box__titles__title コメントを入力
+        = f.text_area :text,value: @comment.text,placeholder: '60文字以内',class:"from-boxs__box__from"
+      .from-boxs__box
+        = f.submit "送信",class:"from-boxs__box__from"
+  %h2.from-boxs__back 
+    =link_to "戻る",  tweet_path(@tweet.id),class:"from-boxs__back"

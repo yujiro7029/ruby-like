@@ -42,6 +42,11 @@ a.from-boxs__back {
   color: white;
 }
 
+// 隙間開ける要素として利用
+.list-boxs__blank {
+  height: 20px;
+}
+
 // 入力タイトル
 p.from-boxs__title {
   margin: 0 0 0 225px;

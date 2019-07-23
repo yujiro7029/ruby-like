@@ -1,1 +1,54 @@
-= render partial: "from"
+.container-fluid
+  .from-boxs
+    = form_for @tweet do |f|
+      .from-boxs__box
+        .from-boxs__box__titles
+          %p.from-boxs__box__titles__title タイトルを入力 　
+          %p.from-boxs__box__titles__require　必須
+        = f.text_area :title,value: @tweet.title,placeholder: '60文字以内',class:"from-boxs__box__from"
+      .from-boxs__box
+        .from-boxs__box__titles
+          %p.from-boxs__box__titles__title ポイントを入力 　
+          %p.from-boxs__box__titles__require　必須
+        = f.text_area :point, value: @tweet.point,placeholder: '      ~~~ ~~~    で囲む',class:"from-boxs__box__from"
+      .from-boxs__box
+        .from-boxs__box__titles
+          %p.from-boxs__box__titles__title 問題文を入力 　
+          %p.from-boxs__box__titles__require　必須
+        = f.text_area :content,value: @tweet.content,placeholder: '      ~~~ ~~~    で囲む',class:"from-boxs__box__from"
+      #hidden
+        .from-boxs__box
+          .from-boxs__box__titles
+            %p.from-boxs__box__titles__title 選択問題その1 　
+            %p.from-boxs__box__titles__require　必須
+          = f.text_area :select_problem1,value: "選択なし",placeholder: '      ~~~ ~~~    で囲む',class:"from-boxs__box__from"
+        .from-boxs__box
+          .from-boxs__box__titles
+            %p.from-boxs__box__titles__title 選択問題その2 　
+            %p.from-boxs__box__titles__require　必須
+          = f.text_area :select_problem2,value: "選択なし",placeholder: '      ~~~ ~~~    で囲む',class:"from-boxs__box__from"
+        .from-boxs__box
+          .from-boxs__box__titles
+            %p.from-boxs__box__titles__title 選択問題その3 　
+            %p.from-boxs__box__titles__require　必須
+          = f.text_area :select_problem3,value: "選択なし",placeholder: '      ~~~ ~~~    で囲む',class:"from-boxs__box__from"
+        .from-boxs__box
+          .from-boxs__box__titles
+            %p.from-boxs__box__titles__title 選択問題その4 　
+            %p.from-boxs__box__titles__require　必須
+          = f.text_area :select_problem4,value: "選択なし",placeholder: '      ~~~ ~~~    で囲む',class:"from-boxs__box__from"
+        .from-boxs__box
+          .from-boxs__box__titles
+            %p.from-boxs__box__titles__title 選択問題その5 　
+            %p.from-boxs__box__titles__require　必須
+          = f.text_area :select_problem5,value: "選択なし",placeholder: '      ~~~ ~~~    で囲む',class:"from-boxs__box__from"
+        .from-boxs__box
+          .from-boxs__box__titles
+            %p.from-boxs__box__titles__title 問題区分を選択 　
+            %p.from-boxs__box__titles__require　必須
+          = f.select :type_problem,[1]
+      .from-boxs__box
+        = f.submit "送信",class:"from-boxs__box__from"
+  %h2.from-boxs__back 
+    =link_to "戻る", new_tweet_path,class:"from-boxs__back"
+  

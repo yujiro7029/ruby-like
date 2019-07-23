@@ -1,0 +1,43 @@
+// 全体の枠
+.list-boxs__comments {
+  text-align: left;
+  width: 40%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+}
+// コメントの枠
+.list-boxs__comments__comment {
+  padding: 20px 10px 0 0;
+  margin: 20px 0 20px 0;
+  font-size: 15px;
+  min-height: 100px;
+  word-wrap: break-word;
+  display: flex;
+  background: #d6ebff;
+  box-shadow: 0px 0px 0px 10px #d6ebff;
+  border: dashed 2px white;
+}
+
+// コメント画像
+.list-boxs__comments__comment__image{
+  height:50px;
+  border-radius:50%;
+  width: 10%;
+}
+img.list-boxs__comments__comment__image {
+  width: 100%;
+}
+
+// コメント文字
+p.list-boxs__comments__comment__text{
+  width: 90%;
+  padding: 0 20px 0 20px;
+}
+// もっと見る
+a.list-boxs__comments__more {
+  text-align: right;
+  font-size: 15px;
+  width: 100%;
+  display: inline-block;
+}
