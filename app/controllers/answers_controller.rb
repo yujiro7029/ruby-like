@@ -1,7 +1,6 @@
 class AnswersController < ApplicationController
   
- def index  
-redirect_to new_tweet_answer_path
+ def index   
  end
   
   def show
@@ -22,11 +21,13 @@ redirect_to new_tweet_answer_path
     redirect_to tweet_answer_path(@answer.tweet_id,@answer.id)
   end
 
-end
-
-
 private
 
-def answer_params
-  params.require(:answer).permit(:content, :tweet_id).merge(tweet_id: params[:tweet_id])
+  def answer_params
+   params.require(:answer).permit(:content, :tweet_id).merge(tweet_id: params[:tweet_id])
+  end
+
 end
+
+
+

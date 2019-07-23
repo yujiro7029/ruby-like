@@ -1,11 +1,11 @@
-.container-fluid
-  %p 問題文
-  = sanitize markdown(@tweet.title)
-  .row
-    .col-xs-6.col-lg-6
-      = form_for @answer, url: tweet_answers_path(@answer.tweet.id,@answer.id),method: :post do |f|
-        %h5 回答を入力して下さい
-        .form-group= f.text_area :content, class:"form-control",type:"text"
-    #form-text.col-xs-6.col-lg-6
-      %h4 入力内容が更新
-    .form-group= f.submit "送信",class:"form-control"
+-# .container-fluid
+-#   %p 問題文
+-#   = @tweet.title
+-#   .row
+-#     .col-xs-6.col-lg-6
+-#       = form_for @tweet, @answer  do |f|
+-#         %h5 回答を入力して下さい
+-#         .form-group= f.text_area :content, class:"form-control",type:"text"
+-#     #form-text.col-xs-6.col-lg-6
+-#       %h4 入力内容が更新
+-#     .form-group= f.submit "送信",class:"form-control"
