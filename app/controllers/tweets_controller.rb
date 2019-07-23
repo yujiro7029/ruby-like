@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
 
-  before_action :find_tweet,only:[:update,:show,:edit,:destroy,:new]
+  before_action :find_tweet,only:[:update,:show,:edit,:destroy]
   before_action :set_tweet,only:[:new,:select,:description]
 
 
