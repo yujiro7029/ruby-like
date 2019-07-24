@@ -10,13 +10,9 @@ $(function() {
                   `
                   $("#form-text").append(html)
                 }
-    $("#answer_content").on('change', function(e){
+    $(".from-boxs__box__from").on('change', function(e){
       e.preventDefault();   
-      inputText = $("#answer_content").val();
+      inputText = $("from-boxs__box__from").val();
       appendHtml(inputText)
   })
 })  
-
-
-
-// もともとhtmlに生成して置いて、中身の部分となりゆる箇所に

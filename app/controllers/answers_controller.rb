@@ -1,30 +1,47 @@
 class AnswersController < ApplicationController
-  
- def index   
- end
+  before_action :find_tweet,only:[:index,:new,:update,:show,:edit,:destroy]
+  before_action :find_answer,only:[:update,:show,:edit,:destroy]
+  before_action :set_answer,only:[:index,:new]
+
+  def index   
+   
+  end
   
   def show
-    @answer = Answer.find(params[:id])
-    @tweet = Tweet.find(params[:tweet_id])
   end
   
 
   def new
-    @answer = Answer.new
-    @tweet = Tweet.find(params[:tweet_id])
-    @answer.tweet_id = @tweet.id
   end
 
 
   def create
     @answer = Answer.create(answer_params)
-    redirect_to tweet_answer_path(@answer.tweet_id,@answer.id)
+    if @answer.save
+      flash[:notice] = '投稿できました'
+      redirect_to action: :index
+    else
+      flash[:notice] = 'メッセージを入力してください。'
+      redirect_to action: :new
+    end
   end
 
 private
 
   def answer_params
    params.require(:answer).permit(:content, :tweet_id).merge(tweet_id: params[:tweet_id])
+  end
+
+  def find_tweet
+    @tweet = Tweet.find(params[:tweet_id])   
+  end
+
+  def find_answer
+    @answer = Answer.find(params[:tweet_id])
+  end
+ 
+  def set_answer
+    @answer = Answer.new 
   end
 
 end

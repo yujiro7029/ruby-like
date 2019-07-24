@@ -1,16 +1,17 @@
 .from-boxs {
   text-align: center;
-  margin: 0 300px 0 300px;
+  width: 50%;
+  margin: 0 auto;
     &__box{
       margin: 50px 0 50px 0;
       &__from{
-        width: 600px;
-        height: 150px;
+        width: 100%;
+        min-height: 300px;
       }
       &__titles{
         display: flex;
         font-weight: bold;
-        margin: 0 0 20px 225px;
+        margin: 0 0 20px 0;
           &__require{
             color: white;
             background-color: red;
@@ -22,10 +23,11 @@
 }
 
 // 送信ボタン
-input.from-boxs__box__from {
-height: 50px;
+input.from-boxs__box__start-buttom{
 color: white;
 background-color: red;
+height: 50px;
+width: 100%;
 }
 
 // 戻るボタン
@@ -34,10 +36,9 @@ h2.from-boxs__back {
   font-size: large;
   background-color: gray;
   line-height: 3;
-  margin: 0 700px 0 700px;
-  color:white;
+  margin:20px auto;
+  width: 200px;
 }
-
 a.from-boxs__back {
   color: white;
 }
@@ -49,11 +50,10 @@ a.from-boxs__back {
 
 // 入力タイトル
 p.from-boxs__title {
-  margin: 0 0 0 225px;
+  margin: 0 0 0 0;
 }
 
 // selectフォーム
-
 .select-boxs{
   text-align: center;
   margin:100px 0 0 0;
@@ -65,11 +65,9 @@ p.from-boxs__title {
 
 
 // セレクトタブ
-
 h1.select-boxs__box__link {
   margin: 0 0 30px 0;
 }
-
 
 h2.select-boxs__box__link {
   line-height: 4;
@@ -79,4 +77,24 @@ h2.select-boxs__box__link {
   text-align: center;
   margin:50px 0px 50px 0px;
   border-radius: 40px;
+}
+
+// answerの部分
+.from-boxs__answer-boxs {
+  text-align: left;
+    &__box{
+      width: 100%;
+      min-height: 200px;
+      padding: 0.2em 0.5em;
+      margin: 2em 0;
+      color: #565656;
+      background: #ffeaea;
+      box-shadow: 0px 0px 0px 10px #ffeaea;
+      border: dashed 2px #ffc3c3;
+      border-radius: 8px;
+      word-wrap: break-word;
+    }
+}
+p.from-boxs__answer-boxs__title{
+  font-weight: bold;
 }

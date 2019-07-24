@@ -21,7 +21,7 @@
             %td.list-boxs__head__list-details__table__td 回答数
             %td.list-boxs__head__list-details__table__td 50
     %h2.list-boxs__head__link
-      =link_to "回答する",  root_path,class:"list-boxs__head__link"
+      =link_to "回答する",  new_tweet_answer_path(@tweet.id),class:"list-boxs__head__link"
     .list-boxs__under
       %p.list-boxs__under__theme 問題文のポイントを紹介
       %p.list-boxs__under__point=@tweet.point
@@ -40,7 +40,8 @@
       =link_to "もっと見る",tweet_comments_path(@tweet.id),class:"list-boxs__comments__more"
     
     =link_to "コメントする",new_tweet_comment_path(@tweet.id),class:"list-boxs__comment-buttom"
-
+    %h2.from-boxs__back 
+      =link_to "戻る", root_path,class:"from-boxs__back"
            
 
 
