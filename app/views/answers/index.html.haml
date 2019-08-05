@@ -1,0 +1,9 @@
+- if flash[:notice]
+  %p.flash= flash[:notice]
+.select-boxs
+  .select-boxs__box
+    %h1.select-boxs__box__title
+    %h2.select-boxs__box__link
+      =link_to "答え合わせをする",judge_tweet_answers_path(@answer.tweet_id),class:"from-boxs__back"
+%h2.from-boxs__back 
+  =link_to "回答に戻る", new_tweet_answer_path(@tweet.id),class:"from-boxs__back"

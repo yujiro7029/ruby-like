@@ -8,15 +8,19 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all.limit(4)
   end
 
+  def new
+  end
+  
+
   def show
     @comments = Comment.all.limit(3)
   end
 
   def edit
     if @tweet.type_problem == 2
-      render action: :select
+      render "tweets/select"
     else
-      render action: :description
+      render "tweets/description"
     end
   end
 
@@ -43,26 +47,24 @@ class TweetsController < ApplicationController
       redirect_to action: :new
     end
   end
-
-  def new
-  end
-   
-
-  # 選択問題2
-  def select
-  end
-
-  # 記述問題1
-  def description
-  end
-
-
-
-  
 private
 
   def tweet_params
-    params.require(:tweet).permit(:content, :point,:title,:type_problem,:select_problem1,:select_problem2,:select_problem3,:select_problem4,:select_problem5)
+    params.require(:tweet).permit(
+      :content,
+      :point,:title,
+      :type_problem,
+      :select_problem1,
+      :select_problem2,
+      :select_problem3,
+      :select_problem4,
+      :select_problem5,
+      :judge_problem1,
+      :judge_problem2,
+      :judge_problem3,
+      :judge_problem4,
+      :judge_problem5  
+    )
   end
 
   def set_tweet

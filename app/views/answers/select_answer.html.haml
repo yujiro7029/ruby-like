@@ -1,0 +1,43 @@
+.container-fluid
+  .from-boxs
+    .from-boxs__answer-boxs
+      %p.from-boxs__answer-boxs__title 問題文を出力
+      .from-boxs__answer-boxs__box=@tweet.content
+    = form_for [@tweet,@answer] do |f|
+      %p.from-boxs__answer-boxs__title 回答その１
+      .list-boxs__comments__comment=@tweet.select_problem1
+      %p.from-boxs__answer-boxs__title 回答その2
+      .list-boxs__comments__comment=@tweet.select_problem2
+      %p.from-boxs__answer-boxs__title 回答その3
+      .list-boxs__comments__comment=@tweet.select_problem3
+      %p.from-boxs__answer-boxs__title 回答その4
+      .list-boxs__comments__comment=@tweet.select_problem4
+      %p.from-boxs__answer-boxs__title 回答その5
+      .list-boxs__comments__comment=@tweet.select_problem5
+      .from-boxs__box
+        .from-boxs__box__titles
+          %p.from-boxs__box__titles__title 正解と思われる回答を選択（１箇所のみ） 
+          %p.from-boxs__box__titles__require  必須
+        .check_boxs
+          .check_boxs__box
+            = f.label :回答その１
+            = f.check_box :judge_problem1,{}
+          .check_boxs__box
+            = f.label :回答その2
+            = f.check_box :judge_problem2,{}
+          .check_boxs__box
+            = f.label :回答その3
+            = f.check_box :judge_problem3,{}
+          .check_boxs__box
+            = f.label :回答その4
+            = f.check_box :judge_problem4,{}
+          .check_boxs__box
+            = f.label :回答その5
+            = f.check_box :judge_problem5,{}
+          #hidden
+            .from-boxs__box
+              = f.text_area :content,value: "選択問題",class:"from-boxs__box__from"
+      .from-boxs__box
+        = f.submit "送信",class:"from-boxs__box__start-buttom"
+  %h2.from-boxs__back 
+    =link_to "戻る", tweet_path(@tweet.id),class:"from-boxs__back" 

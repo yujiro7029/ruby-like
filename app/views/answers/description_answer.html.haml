@@ -1,0 +1,33 @@
+.container-fluid
+  .from-boxs
+    .from-boxs__answer-boxs
+      %p.from-boxs__answer-boxs__title 問題文を出力
+      .from-boxs__answer-boxs__box=@tweet.content
+    = form_for [@tweet,@answer] do |f|
+      .from-boxs__box
+        .from-boxs__box__titles
+          %p.from-boxs__box__titles__title 回答を入力 
+          %p.from-boxs__box__titles__require  必須
+        = f.text_area :content,placeholder: '回答を入力してください',class:"from-boxs__box__from"
+      #hidden
+        .check_boxs__box
+          = f.label :回答その１
+          = f.check_box :judge_problem1,{}
+        .check_boxs__box
+          = f.label :回答その2
+          = f.check_box :judge_problem2,{}
+        .check_boxs__box
+          = f.label :回答その3
+          = f.check_box :judge_problem3,{}
+        .check_boxs__box
+          = f.label :回答その4
+          = f.check_box :judge_problem4,{}
+        .check_boxs__box
+          = f.label :回答その5
+          = f.check_box :judge_problem5,{}
+      .from-boxs__box
+        = f.submit "送信",class:"from-boxs__box__start-buttom"
+
+      
+  %h2.from-boxs__back 
+    =link_to "戻る", tweet_path(@tweet.id),class:"from-boxs__back" 

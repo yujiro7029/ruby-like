@@ -6,6 +6,15 @@ Rails.application.routes.draw do
       get "2/select", to:"tweets#select", as: :select
     end
     resources :comments,only:[:index,:new,:create,:destory] 
-    resources :answers, only:[:index,:update,:destory,:show,:create,:new]
+    resources :answer_results,only:[:create] 
+    resources :answers do
+      collection do
+        get "judge"
+        get "select_answer"
+        get "description_answer"
+        post  "select_check"
+        post  "description_check"
+      end
+    end
   end 
 end

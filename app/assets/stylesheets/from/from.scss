@@ -6,20 +6,38 @@
       margin: 50px 0 50px 0;
       &__from{
         width: 100%;
-        min-height: 300px;
+        min-height: 200px;
+        margin: 20px 0 0 0;
       }
       &__titles{
+        line-height: 2;
         display: flex;
         font-weight: bold;
         margin: 0 0 20px 0;
           &__require{
             color: white;
             background-color: red;
-            padding:0 20px 0 0;
-
+            padding:0 0 0 0;
+            margin: 0 20px 0 0;
+            width: 40px;
+          }
+          &__title{
+            margin:0 20px 0 0;
+          }
+          &__select{
+            display: inline-block;
+            width: 100%;
+            margin: 0 0 20px 0;
           }
       }
     }
+}
+
+h2.from-boxs__title {
+  text-align: -webkit-left;
+  font-weight: bold;
+  color: red;
+  font-size: larger;
 }
 
 // 送信ボタン
@@ -97,4 +115,36 @@ h2.select-boxs__box__link {
 }
 p.from-boxs__answer-boxs__title{
   font-weight: bold;
+  text-align: left;
 }
+
+// 選択式の回答のフォーム
+// コメントの枠
+.list-boxs__comments__comment {
+  padding: 20px 10px 0 0;
+  margin: 20px 0 20px 0;
+  font-size: 15px;
+  min-height: 100px;
+  word-wrap: break-word;
+  display: flex;
+  background: #d6ebff;
+  box-shadow: 0px 0px 0px 10px #d6ebff;
+  border: dashed 2px white;
+}
+
+.check_boxs{
+  text-align: left;
+  display: flex;
+  min-height: 50px;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #6091d3;
+  background: #FFF;
+  border: solid 3px #6091d3;
+  border-radius: 10px;
+    &__box{
+      padding: 0 20px 0 0;
+    }
+}
+

@@ -1,0 +1,20 @@
+- if flash[:notice]
+  %p.flash= flash[:notice]
+.container-fluid
+  .list-boxs
+    .list-boxs__under
+      %p.list-boxs__under__theme=@correct_list
+      %p.list-boxs__under__point=@correct
+      .list-boxs__under__like-flag-boxs
+    .list-boxs__under
+      %p.list-boxs__under__theme 結果
+      %p.from-boxs__answer-boxs__box=answer_problem
+
+      .list-boxs__under__like-flag-boxs
+    .list-boxs__under
+      = form_for [@tweet,@answer_result] do |f|
+        #hidden
+          .check_boxs
+            = f.check_box :result,{}
+        .from-boxs__box
+          = f.submit "結果を送信",class:"from-boxs__box__start-buttom"

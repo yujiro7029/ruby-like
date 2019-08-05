@@ -10,13 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_23_093104) do
+ActiveRecord::Schema.define(version: 2019_08_01_124318) do
+
+  create_table "answer_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "result"
+    t.integer "tweet_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "tweet_id"
+    t.integer "judge_problem1"
+    t.integer "judge_problem2"
+    t.integer "judge_problem3"
+    t.integer "judge_problem4"
+    t.integer "judge_problem5"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -33,6 +46,11 @@ ActiveRecord::Schema.define(version: 2019_07_23_093104) do
     t.datetime "updated_at", null: false
     t.string "title"
     t.integer "type_problem"
+    t.integer "judge_problem1"
+    t.integer "judge_problem2"
+    t.integer "judge_problem3"
+    t.integer "judge_problem4"
+    t.integer "judge_problem5"
     t.string "select_problem1"
     t.string "select_problem2"
     t.string "select_problem3"
