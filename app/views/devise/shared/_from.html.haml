@@ -1,0 +1,22 @@
+.container-fluid
+  .from
+    %h2.from__title  新規登録
+    .from__boxs
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .from-boxs__box__titles__require 必須
+        .from__boxs__field
+          = f.email_field :name,placeholder:"ニックネーム",class:"from__boxs__field"
+        .from-boxs__box__titles__require 必須
+        .from__boxs__field
+          = f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email",class:"from__boxs__field"
+        .from-boxs__box__titles__require 必須
+        .from__boxs__field
+          = f.password_field :password, autocomplete: "current-password",placeholder:"password",class:"from__boxs__field"
+        .from-boxs__box__titles__require 必須
+        .from__boxs__field
+          = f.password_field :password, autocomplete: "new-password",class:"from__boxs__field",placeholder:"もう一度パスワードを入力してください"
+        .from-boxs__box__titles__any 任意
+        .from__boxs__field
+          = f.file_field :image,class:"from__boxs__field",placeholder:"もう一度パスワードを入力してください"
+        .from__boxs__buttom
+          = f.submit "新規登録",class:"from__boxs__buttom"

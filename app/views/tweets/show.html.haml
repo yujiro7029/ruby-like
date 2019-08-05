@@ -7,7 +7,11 @@
       .list-boxs__head__user-image
         =image_tag("toppage/toppage-cat.jpg",class:"list-boxs__head__user-image")
       .list-boxs__head__list-details
-        %table{border:"1"}
+        %table
+          %tr
+            %th.list-boxs__head__list-details__table__td 項目
+            %th.list-boxs__head__list-details__table__td 詳細 
+          %tr
           %tr
             %td.list-boxs__head__list-details__table__td 投稿者
             %td.list-boxs__head__list-details__table__td ユーザー名

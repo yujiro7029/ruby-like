@@ -1,0 +1,14 @@
+.container-fluid
+  .from
+    %h2.from__title  Log in
+    .from__boxs
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .from-boxs__box__titles__require 必須
+        .from__boxs__field
+          = f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email",class:"from__boxs__field"
+        .from-boxs__box__titles__require 必須
+        .from__boxs__field
+          = f.password_field :password, autocomplete: "current-password",placeholder:"password",class:"from__boxs__field"
+
+        .from__boxs__buttom
+          = f.submit "ログイン",class:"from__boxs__buttom"

@@ -1,0 +1,20 @@
+.container-fluid
+  
+  .mypage
+    = render "users/mypage-list"
+    .mypage__content
+      .mypage__content__user-icon
+        = link_to root_path, class: "mypage__content__user-icon__user" do
+          = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", class: "mypage__content__user-icon__user", size: "60x60" 
+        %h2.mypage__content__user-icon__name　ユーザー名
+      .mypage__content__user-info
+        %table
+          %tr
+            %th　項目
+            %th　詳細
+          %tr
+            %td　名前
+            %td=current_user&.name
+          %tr
+            %td　email
+            %td=current_user&.email

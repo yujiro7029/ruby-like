@@ -21,6 +21,14 @@
             margin: 0 20px 0 0;
             width: 40px;
           }
+          &__any{
+            color: white;
+            background-color: blue;
+            padding:0 0 0 0;
+            margin: 0 20px 0 0;
+            width: 40px;
+
+          }
           &__title{
             margin:0 20px 0 0;
           }
@@ -148,3 +156,92 @@ p.from-boxs__answer-boxs__title{
     }
 }
 
+
+// ログイン、新規登録に関わるフォーム
+
+.from{
+  font-family: 'Open Sans', sans-serif;
+  width:40%;
+  margin: 100px auto;
+  display: block;
+  text-align: center;
+    &__boxs{
+      background: #ebebeb;
+      padding: 12px;
+        &__field{
+          margin: 5px 0 20px 0;
+          width: 100%;
+          line-height: 3;
+        }
+    }
+    &__title{
+      background: #28d;
+      padding: 20px;
+      font-size: 1.4em;
+      font-weight: normal;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+    }
+}
+.from__boxs__buttom{
+  background: #28d;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  line-height: 3;
+  
+}
+
+
+
+// テーブル
+table{
+  width: 100%;
+  border-collapse:separate;
+  border-spacing: 0;
+  word-break : break-all;
+}
+
+table th:first-child{
+  border-radius: 5px 0 0 0;
+}
+
+table th:last-child{
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
+}
+
+table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  width: 25%;
+  padding: 10px 0;
+}
+
+table td{
+  text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top:none;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  width: 25%;
+  padding: 10px 0;
+}
+
+table td:last-child{
+  border-right: 1px solid #a8b7c5;
+}
+
+table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}

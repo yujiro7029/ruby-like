@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'tweets#index'
+  devise_for :users
+  resource :users
   resources :tweets do
     collection do
       get "1/description", to:"tweets#description", as: :description

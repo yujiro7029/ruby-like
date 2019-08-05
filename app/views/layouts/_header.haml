@@ -8,6 +8,11 @@
       .main-right__search-box
         %input.main-right__search-box{name:"keyword",placeholder:"何かお探しですか？"}
         =fa_icon("search search-icon")
-      .main-right__mypage
-        =image_tag("toppage/toppage-cat.jpg",class:"main-right__mypage__image")
-        =link_to "ユーザー名",root_path
+      -if  user_signed_in?
+        .main-right__mypage
+          =image_tag("toppage/toppage-cat.jpg",class:"main-right__mypage__image")
+          =link_to "#{current_user&.name}",users_path
+      -else
+        .main-right__mypage
+          =link_to "新規登録",new_user_registration_path
+          =link_to "ログイン",new_user_session_path
