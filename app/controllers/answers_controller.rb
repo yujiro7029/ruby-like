@@ -4,6 +4,7 @@ class AnswersController < ApplicationController
   before_action :set_answer,only:[:description_answer,:select_answer,:index,:new,:check]
   before_action :set_answer_result,only:[:judge]
   before_action :judge_problem,only:[:judge]
+  before_action :authenticate_user!
 
   def index   
     @answer = Answer.where(tweet_id: params[:tweet_id]).last
