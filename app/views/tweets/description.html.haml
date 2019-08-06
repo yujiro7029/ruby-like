@@ -24,6 +24,11 @@
           = f.text_area :select_problem4,value: "選択なし",placeholder: '      ~~~ ~~~    で囲む',class:"from-boxs__box__from"
           = f.text_area :select_problem5,value: "選択なし",placeholder: '      ~~~ ~~~    で囲む',class:"from-boxs__box__from"
           = f.select :type_problem,[1]
+          = f.select :judge_problem1,[3]
+          = f.select :judge_problem2,[3]
+          = f.select :judge_problem3,[3]
+          = f.select :judge_problem4,[3]
+          = f.select :judge_problem5,[3]
       .from-boxs__box
         = f.submit "送信",class:"from-boxs__box__start-buttom"
   %h2.from-boxs__back 

@@ -47,16 +47,16 @@ ActiveRecord::Schema.define(version: 2019_08_05_110314) do
     t.datetime "updated_at", null: false
     t.string "title"
     t.integer "type_problem"
-    t.integer "judge_problem1"
-    t.integer "judge_problem2"
-    t.integer "judge_problem3"
-    t.integer "judge_problem4"
-    t.integer "judge_problem5"
     t.string "select_problem1"
     t.string "select_problem2"
     t.string "select_problem3"
     t.string "select_problem4"
     t.string "select_problem5"
+    t.integer "judge_problem1"
+    t.integer "judge_problem2"
+    t.integer "judge_problem3"
+    t.integer "judge_problem4"
+    t.integer "judge_problem5"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

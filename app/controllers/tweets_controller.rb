@@ -45,7 +45,7 @@ class TweetsController < ApplicationController
       flash[:notice] = '投稿できました'
       redirect_to action: :index
     else
-      flash[:notice] = 'メッセージを入力してください。'
+      flash[:notice] = '投稿できませんでした。'
       redirect_to action: :new
     end
   end
