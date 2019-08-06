@@ -1,5 +1,7 @@
-.list-boxs__comments
-  =render partial:'comments/list',collection:@comments,as:"comment"
-.list-boxs__blank
-%h2.from-boxs__back 
-  =link_to "戻る",  tweet_path(@tweet.id),class:"from-boxs__back"
+.container-fluid
+  .comment-boxs
+    .list-boxs__comments
+      =render partial:'comments/list',collection:@comments,as:"comment"
+    .list-boxs__blank
+    %h2.from-boxs__back 
+      =link_to "戻る",  tweet_path(@tweet.id),class:"from-boxs__back"

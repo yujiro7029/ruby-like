@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
   end
   
   def new
-   
     @comment = Comment.new
   end
 
@@ -25,7 +24,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:text,:tweet_id).merge(tweet_id:params[:tweet_id])
+    params.require(:comment).permit(:text,:tweet_id).merge(tweet_id:params[:tweet_id],user_id: current_user.id)
   end
 
   def set_tweet_id

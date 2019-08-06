@@ -13,7 +13,7 @@
   width: 10%;
 }
 img.list-boxs__comments__comment__image {
-  width: 100%;
+  width: 80%;
 }
 
 // コメント文字
@@ -27,4 +27,10 @@ a.list-boxs__comments__more {
   font-size: 15px;
   width: 100%;
   display: inline-block;
+}
+
+// スペース調整のため。コメントの一覧
+.comment-boxs{
+  width: 70%;
+  margin: 50px auto;
 }

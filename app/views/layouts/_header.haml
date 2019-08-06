@@ -10,7 +10,7 @@
         =fa_icon("search search-icon")
       -if  user_signed_in?
         .main-right__mypage
-          =image_tag("toppage/toppage-cat.jpg",class:"main-right__mypage__image")
+          =image_tag(current_user&.image.to_s,class:"main-right__mypage__image")
           =link_to "#{current_user&.name}",users_path
       -else
         .main-right__mypage

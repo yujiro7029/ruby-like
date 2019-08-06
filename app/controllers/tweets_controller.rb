@@ -13,7 +13,8 @@ class TweetsController < ApplicationController
   
 
   def show
-    @comments = Comment.all.limit(3)
+    @comments = @tweet.comments.limit(3)
+  
   end
 
   def edit
