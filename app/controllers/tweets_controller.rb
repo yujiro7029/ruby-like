@@ -66,7 +66,7 @@ private
       :judge_problem3,
       :judge_problem4,
       :judge_problem5  
-    )
+    ).merge(user_id: current_user.id)
   end
 
   def set_tweet
