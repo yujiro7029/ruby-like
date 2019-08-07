@@ -3,7 +3,6 @@ crumb :root do
   link "HOME", root_path
 end
 
-
 #tweets/edit
 crumb :tweet_edit do |edit|
   link "#{edit.title}を編集",edit_tweet_path
