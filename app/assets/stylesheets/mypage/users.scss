@@ -16,12 +16,12 @@
       height: 100%;
     }
     &__content{
-      width: 50%;
+      width: calc(100% - 150px);
       margin: 0 auto;
       text-align: center;
         &__user-icon{
           padding: 20px 0 0 0;
-          margin: 20px 0 50px 0;
+          margin: 20px 50px 50px 50px;
           font-size: 15px;
           background: #d6ebff;
           box-shadow: 0px 0px 0px 10px #d6ebff;
@@ -29,6 +29,10 @@
               margin: 20px 0 20px 0;
             }
         }
+        &__user-info{
+          margin: 0 50px 0 50px;
+        }
+
     }
 }
 
@@ -46,6 +50,41 @@ a.mypage__side__list__item {
 }
 
 
+// マイページのフォーム
+.answer-boxs{
+  margin: 0 30px 0 30px;
+  color: #6091d3;
+  background: #FFF;
+  border: solid 3px #6091d3;
+  border-radius: 10px;
+  text-align: left;
+  padding: 0 0 0 20px;
+  min-height: 200px;
+    &__text{
+      padding: 20px 5px 0 5px;
+      text-align: center;
+      word-break: break-all;
+    }
+    &__option{
+      padding: 10px 0 0 0;
+    }
+}
+
+i.fa.fa-heart.answer-box__option__box__text-like {
+  color: red;
+}
+
+a.answer-box__option__box__text-anawer {
+  color: black;
+}
+
+h2.answer-name {
+  margin: 10px 30px 10px 30px;
+  text-align: left;
+ font-size: 20px;
+  font-family: monospace;
+  color: black;
+}
 
 
 

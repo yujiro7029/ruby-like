@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes
   has_many :flags
+  has_many :tweets
+  has_many :answer_results
+
+ 
 end

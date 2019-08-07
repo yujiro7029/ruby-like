@@ -1,0 +1,13 @@
+-breadcrumb :like_list
+.container-fluid
+  .mypage
+    = render "users/mypage-list"
+    .mypage__content
+      %h2.answer-name いいねした問題
+      .answer-boxs
+        = render partial:'users/display',collection:@mylikes,as:"user"
+      %h2.answer-name いいねされた問題
+      .answer-boxs
+        = render partial:'users/check-likes',collection:@likes,as:"user"
+       
+     

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_125857) do
+ActiveRecord::Schema.define(version: 2019_08_07_091016) do
 
   create_table "answer_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "result"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_125857) do
     t.integer "judge_problem3"
     t.integer "judge_problem4"
     t.integer "judge_problem5"
+    t.integer "user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -1,10 +1,12 @@
 .mypage__side
   %ul.mypage__side__list
     %li.mypage__side__list__item
-      = link_to "マイページ",root_path, class: "mypage__side__list__item"
+      = link_to "マイページ", users_path, class: "mypage__side__list__item"
     %li.mypage__side__list__item
-      = link_to  "回答問題",root_path, class: "mypage__side__list__item"
+      = link_to  "回答した問題", answer_question_users_path, class: "mypage__side__list__item"
     %li.mypage__side__list__item
-      = link_to "いいね数",root_path, class: "mypage__side__list__item"
+      = link_to "投稿した問題",answer_users_path, class: "mypage__side__list__item"
+    %li.mypage__side__list__item
+      = link_to "いいね数", likes_list_users_path, class: "mypage__side__list__item"
     %li.mypage__side__list__item
       = link_to "ログアウト",destroy_user_session_path,method: :delete, class: "mypage__side__list__item"

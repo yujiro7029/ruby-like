@@ -1,0 +1,11 @@
+-breadcrumb :answer_question
+.container-fluid
+  .mypage
+    = render "users/mypage-list"
+    .mypage__content
+      %h2.answer-name 正解した問題
+      .answer-boxs
+        = render partial:'users/display',collection:@correct_answer,as:"user"
+      %h2.answer-name 間違えた問題
+      .answer-boxs
+        = render partial:'users/display',collection:@incorrect_answer,as:"user"

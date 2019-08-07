@@ -1,0 +1,11 @@
+-breadcrumb :answer
+.container-fluid
+  .mypage
+    = render "users/mypage-list"
+    .mypage__content
+      %h2.answer-name 選択問題
+      .answer-boxs
+        = render partial:'users/answer-display',collection: @selects,as:"tweet"
+      %h2.answer-name 記述問題
+      .answer-boxs
+        = render partial:'users/answer-display',collection: @description,as:"tweet"

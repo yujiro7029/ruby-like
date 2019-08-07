@@ -1,0 +1,5 @@
+.answer-boxs__option
+  - if user_signed_in?
+    = link_to tweet.title, tweet_path(tweet.id),class:"answer-boxs__option__box__text-anawer"
+    =fa_icon("heart",class:"answer-box__option__box__text-like")
+    %span.answer-boxs__option__box__text-like=tweet.likes.count

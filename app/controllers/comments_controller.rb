@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!,except:[:index]
 
   def index
-    @comments = Comment.all
+    @comments = Comment.where(tweet_id: params[:tweet_id])
   end
   
   def new
