@@ -1,0 +1,29 @@
+
+.flag-main{
+
+  width: 50%;
+  margin: 100px auto;
+}
+
+// mainの下部
+.flag-main__main{
+  text-align: center;
+    &__item-box{
+      background: #eee;
+      overflow: hidden;
+    }
+  }
+// 送信ボタン
+a.flag-buttom {
+  display: inline-block;
+  line-height: 3;
+  width: 100%;
+  margin: 40px auto;
+  background-color: red;
+  color: white;
+}
+
+h4.flag-main__main__item-box__item-theme {
+  line-height: 3;
+  font-size: 30px;
+}

@@ -1,3 +1,8 @@
+.index-boxs{
+  width: 90%;
+  margin: 0 auto;
+}
+
 .problem-box{
   margin: 0 30px 0 30px;
   height:250px;
@@ -47,7 +52,6 @@ a.problem-box__option__box__text-anawer {
 .problem-boxs{
   display: flex;
   word-break:break-all;
-  margin: 0 0 0 150px;
 }
 
 h2.title-name {

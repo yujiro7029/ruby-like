@@ -34,10 +34,10 @@
           =fa_icon("heart")
           %span いいね!
           =link_to root_path,class:"list-boxs__under__like-flag-boxs__like__number" do
-            %span.list-boxs__under__like-flag-boxs__like__number 1 
+            %span.list-boxs__under__like-flag-boxs__like__number=like_judgment
         .list-boxs__under__like-flag-boxs__flag
           =fa_icon("flag")
-          =link_to "問題の商品として報告",root_path,class:"list-boxs__under__like-flag-boxs__flag"
+          =flag_list
     -if @comments.present?
       %h1.list-boxs__head__title コメント一覧
       .list-boxs__comments

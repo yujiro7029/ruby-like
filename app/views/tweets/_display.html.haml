@@ -9,4 +9,4 @@
         =fa_icon("edit",class:"problem-box__option__box__text-edit")
       = link_to "回答", tweet_path(tweet.id),class:"problem-box__option__box__text-anawer"
     =fa_icon("heart",class:"problem-box__option__box__text-like")
-    %span.problem-box__option__box__text-like 1
+    %span.problem-box__option__box__text-like=tweet.likes.count
