@@ -4,9 +4,23 @@ class TweetsController < ApplicationController
   before_action :set_tweet,only:[:new,:select,:description]
   before_action :authenticate_user!,except:[:index,:show]
 
-
+# セレクトが２記述が１
   def index
-    @tweets = Tweet.all.limit(4)
+    @select_problem = Tweet.type(2).limit(4)
+    @description_problem = Tweet.type(1).limit(4)
+    @new_tweet = Tweet.new_problem.limit(4)
+  end
+
+  def select_problem
+    @select_problem = Tweet.type(2)
+  end
+
+  def description_problem
+    @description_problem = Tweet.type(1)
+  end
+
+  def new_tweet
+    @new_tweet = Tweet.new_problem
   end
 
   def new
@@ -48,8 +62,9 @@ class TweetsController < ApplicationController
       redirect_to action: :new
     end
   end
-private
 
+
+private
   def tweet_params
     params.require(:tweet).permit(
       :content,

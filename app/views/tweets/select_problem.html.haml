@@ -1,0 +1,6 @@
+.container-fluid
+  %h2.title-name 選択問題をピックアップ 
+  .detail-boxs
+    = render partial:'details-display',collection:@select_problem,as:"tweet"
+  %h2.from-boxs__back 
+    =link_to "戻る", root_path,class:"from-boxs__back"

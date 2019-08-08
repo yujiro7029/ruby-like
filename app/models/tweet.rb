@@ -10,4 +10,7 @@ class Tweet < ApplicationRecord
 
   #user ログインしているユーザーの投稿情報を取得
   scope :current, ->(user){where(user_id:  user)}
+  #tweet/index  指定条件ごとに取り出す値を変更
+  scope :type, ->(problem){where(type_problem:(problem)).order(created_at: :DESC)}
+  scope :new_problem, ->{all.order(created_at: :DESC)}
 end

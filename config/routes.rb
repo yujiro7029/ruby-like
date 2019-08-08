@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     collection do
       get "1/description", to:"tweets#description", as: :description
       get "2/select", to:"tweets#select", as: :select
+      get "select_problem"
+      get "description_problem"
+      get "new_tweet"
     end
     resources :comments,only:[:index,:new,:create,:destory] 
     resources :answer_results,only:[:create] 

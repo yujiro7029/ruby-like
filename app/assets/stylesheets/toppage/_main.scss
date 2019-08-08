@@ -91,6 +91,37 @@ p.answer-button__text {
   color:white;
 }
 
+// もっと見る　一覧詳細ページ
+
+.detail-boxs{
+  width: 70%;
+  margin: 0 auto;
+}
 
 
+.details-box{
+  margin: 10px 30px 10px 30px;
+  font-weight: bold;
+  color: #6091d3;/*文字色*/
+  background: #FFF;
+  border: solid 3px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  display: flex;
+  line-height: 2;
+}
+
+.details-box__text{
+  padding: 0 0 0 10px;
+  width: 70%;
+}
+.details-box__option{
+  width: 30%;
+  text-align: right;
+  margin: 0 10px 0 0;
+  font-size: 20px;
+}
+.details-box__option__box{
+  padding:0 10px 0 10px;
+  
+}
 
