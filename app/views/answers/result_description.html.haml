@@ -16,6 +16,8 @@
         .check_boxs
           .check_boxs__box
             = f.label :問題に正解したならチェックを入れてください
-            = f.check_box :result,{}
+            = f.check_box :result,{}  
+            #hidden
+              = f.select :answer_id,[@answer.id]
         .from-boxs__box
           = f.submit "送信",class:"from-boxs__box__start-buttom"

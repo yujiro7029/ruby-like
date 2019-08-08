@@ -14,11 +14,13 @@ class AnswersController < ApplicationController
   
 
   def new
-    if @tweet.type_problem == 2
-      render "answers/select_answer"
-    else
-      render "answers/description_answer"
-    end
+  #  @check_tweet= AnswerResult.where(tweet_id: params[:tweet_id].to_i) 
+  #  @check_user =AnswerResult.where(user_id: current_user.id)  
+      if @tweet.type_problem == 2
+        render "answers/select_answer"
+      else
+        render "answers/description_answer"
+      end
   end
 
 
@@ -32,7 +34,9 @@ class AnswersController < ApplicationController
   end
 
   def create
+
     @answer = Answer.create(answer_params)
+
     if @answer.save
       flash[:notice] = '投稿できました'
       redirect_to action: :index
@@ -53,7 +57,7 @@ private
      :judge_problem3,
      :judge_problem4,
      :judge_problem5
-    ).merge(tweet_id: params[:tweet_id])
+    ).merge(tweet_id: params[:tweet_id],user_id: current_user.id)
   end
 
   def find_tweet
@@ -61,7 +65,7 @@ private
   end
 
   def find_answer
-    @answer = Answer.where(tweet_id: params[:tweet_id]).last
+    @answer = Answer.where(tweet_id: params[:tweet_id],user_id:current_user.id).last
   end
  
   def set_answer

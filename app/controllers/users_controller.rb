@@ -8,8 +8,8 @@ class UsersController < ApplicationController
 
   # 回答した問題
   def answer_question
-    @correct_answer = AnswerResult.answer(1).current(current_user)
-    @incorrect_answer =AnswerResult.answer(0).current(current_user)
+    @correct_answer = AnswerResult.where(result:1,user_id:current_user.id).includes(:tweet)
+    @incorrect_answer = AnswerResult.where(result:0,user_id:current_user.id).includes(:tweet)
   end
 
   # 投稿した問題

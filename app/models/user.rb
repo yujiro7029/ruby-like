@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :likes
   has_many :flags
   has_many :tweets
+  has_many :answers
   has_many :answer_results
-
- 
 end
