@@ -8,7 +8,7 @@
       .main-right__search-box
         = form_tag search_tweets_path,method: :get,class:"a" do
           = text_field :page,:name, placeholder:"何かお探しですか？",class:"main-right__search-box"
-          = button_tag "a" do
+          = button_tag  class:"search-box__buttom" do
             =fa_icon("search search-icon")
       -if  user_signed_in?
         .main-right__mypage
