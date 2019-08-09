@@ -6,8 +6,10 @@
       %p.main-left__comment 問題を解いて好きになろう
     .main-right
       .main-right__search-box
-        %input.main-right__search-box{name:"keyword",placeholder:"何かお探しですか？"}
-        =fa_icon("search search-icon")
+        = form_tag search_tweets_path,method: :get,class:"a" do
+          = text_field :page,:name, placeholder:"何かお探しですか？",class:"main-right__search-box"
+          = button_tag "a" do
+            =fa_icon("search search-icon")
       -if  user_signed_in?
         .main-right__mypage
           =image_tag(current_user&.image.to_s,class:"main-right__mypage__image")

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get "select_problem"
       get "description_problem"
       get "new_tweet"
+      get "search"
     end
     resources :comments,only:[:index,:new,:create,:destory] 
     resources :answer_results,only:[:create] 
