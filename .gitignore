@@ -25,3 +25,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+#ファイルの最下部に下記を追記
+config/secrets.yml
