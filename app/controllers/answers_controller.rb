@@ -1,6 +1,7 @@
 class AnswersController < ApplicationController
-  before_action :find_tweet,only:[:judge,:index,:new,:update,:edit,:destroy]
-  before_action :find_answer,only:[:judge,:index,:update,:edit,:destroy]
+  before_action :find_tweet,only:[:judge,:index,:new,:destroy]
+  before_action :find_answer,only:[:judge,:index,:destroy]
+  before_action :find_answer_result,only:[:destroy]
   before_action :set_answer,only:[:description_answer,:select_answer,:index,:new,:check]
   before_action :set_answer_result,only:[:judge]
   before_action :judge_problem,only:[:judge]
@@ -14,13 +15,11 @@ class AnswersController < ApplicationController
   
 
   def new
-  #  @check_tweet= AnswerResult.where(tweet_id: params[:tweet_id].to_i) 
-  #  @check_user =AnswerResult.where(user_id: current_user.id)  
-      if @tweet.type_problem == 2
-        render "answers/select_answer"
-      else
-        render "answers/description_answer"
-      end
+    if @tweet.type_problem == 2
+      render "answers/select_answer"
+    else
+      render "answers/description_answer"
+    end
   end
 
 
@@ -34,16 +33,21 @@ class AnswersController < ApplicationController
   end
 
   def create
-
     @answer = Answer.create(answer_params)
-
     if @answer.save
-      flash[:notice] = '投稿できました'
+      flash[:notice] = '回答お疲れ様でした！'
       redirect_to action: :index
     else
-      flash[:notice] = 'メッセージを入力してください。'
+      flash[:notice] = '回答結果が反映されていません'
       redirect_to action: :new
     end
+  end
+
+  def destroy
+    @check_answer.delete if @check_answer
+    @answer.delete if @answer
+    flash[:notice] = '回答結果の削除ができました'
+    redirect_to controller: 'tweets', action: 'show'
   end
 
 private
@@ -66,6 +70,10 @@ private
 
   def find_answer
     @answer = Answer.where(tweet_id: params[:tweet_id],user_id:current_user.id).last
+  end
+
+  def find_answer_result
+    @check_answer = AnswerResult.where(tweet_id: @tweet.id,user_id: current_user&.id).first
   end
  
   def set_answer

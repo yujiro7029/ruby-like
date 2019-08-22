@@ -3,4 +3,4 @@
   .detail-boxs
     = render partial:'details-display',collection:@new_tweet,as:"tweet"
   %h2.from-boxs__back 
-    =link_to "戻る", root_path,class:"from-boxs__back"
+    =link_to "戻る", :back,class:"from-boxs__back"

@@ -5,4 +5,4 @@
       =render partial:'comments/list',collection:@comments,as:"comment"
     .list-boxs__blank
     %h2.from-boxs__back 
-      =link_to "戻る",  tweet_path(@tweet.id),class:"from-boxs__back"
+      =link_to "戻る",  :back,class:"from-boxs__back"

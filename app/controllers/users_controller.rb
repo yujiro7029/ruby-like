@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   def answer
     @selects = Tweet.where(user_id: current_user,type_problem: 2)
     @description = Tweet.where(user_id: current_user,type_problem: 1)
-    @hoge = Tweet.current(current_user)
   end
 
   # いいねのページ

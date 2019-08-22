@@ -22,15 +22,17 @@
             %td.list-boxs__head__list-details__table__td=type_judge
           %tr
             %td.list-boxs__head__list-details__table__td 正答率
-            %td.list-boxs__head__list-details__table__td 50%
+            %td.list-boxs__head__list-details__table__td=answer_count
           %tr
             %td.list-boxs__head__list-details__table__td 回答数
-            %td.list-boxs__head__list-details__table__td 50
+            %td.list-boxs__head__list-details__table__td=@number.count
     %h2.list-boxs__head__link
-      - unless  (@tweet.user_id == current_user&.id)||(@tweet.id == @check_tweet_id)||(@check_user_id == current_user&.id)
-        =link_to "回答する",  new_tweet_answer_path(@tweet.id),class:"list-boxs__head__link"
+      - if  (@check_answer_result.present?) ||  (@check_answer.present?)
+        =link_to "前回の回答を削除する",tweet_answer_path(@tweet.id),method: :delete,class:"list-boxs__head__link", data: {confirm: '前回の回答結果は残りません',cancel: 'やめる',commit: '削除する'},title: '削除確認'
+      - else
+        =link_to "回答する",new_tweet_answer_path(@tweet.id),class:"list-boxs__head__link" 
     .list-boxs__under
-      %p.list-boxs__under__theme 問題文のポイントを紹介
+      %p.list-boxs__under__theme 問題文の ポイントを紹介
       %p.list-boxs__under__point=@tweet.point
       - if user_signed_in?
         .list-boxs__under__like-flag-boxs
@@ -50,7 +52,7 @@
     - if user_signed_in?
       =link_to "コメントする",new_tweet_comment_path(@tweet.id),class:"list-boxs__comment-buttom"
     %h2.from-boxs__back 
-      =link_to "戻る", root_path,class:"from-boxs__back"
+      =link_to "戻る", :back,class:"from-boxs__back"
            
 
 

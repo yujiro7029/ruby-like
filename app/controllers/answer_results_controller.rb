@@ -3,14 +3,14 @@ class AnswerResultsController < ApplicationController
   def create
     @answer = AnswerResult.create(answer_params)
     if @answer.save
-      flash[:notice] = '投稿できました'
+      flash[:notice] = '回答結果を送信しました'
       redirect_to root_path
     else
-      flash[:notice] = 'メッセージを入力してください。'
+      flash[:notice] = '回答結果を送信できませんでした'
       redirect_to judge_tweet_answers_path
     end
   end
-
+  
   private
 
   def answer_params

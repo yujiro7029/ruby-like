@@ -1,8 +1,12 @@
 class TweetsController < ApplicationController
 
   before_action :find_tweet,only:[:update,:show,:edit,:destroy]
+  before_action :find_answer_result,only:[:show]
+  before_action :find_answer_result,only:[:show]
   before_action :set_tweet,only:[:new,:select,:description]
   before_action :authenticate_user!,except:[:index,:show,:select_problem,:description_problem,:new_tweet]
+  before_action :calculate,only:[:show]
+
 
 # セレクトが２記述が１
   def index
@@ -29,6 +33,7 @@ class TweetsController < ApplicationController
 
   def show
     @comments = @tweet.comments.limit(3)
+    @result = @correct_answer.count.to_f / (@number.count).round(1) if @correct_answer.present? &&  @number.present?
   end
 
   def edit
@@ -100,6 +105,17 @@ private
 
   def find_tweet
     @tweet = Tweet.find(params[:id])   
+  end
+
+  def find_answer_result
+    @check_answer_result = AnswerResult.where(tweet_id: @tweet.id,user_id: current_user&.id).first
+    @check_answer = Answer.where(tweet_id: @tweet.id,user_id: current_user&.id).first
+  end
+
+  #回答数や正答率を出すにあたり必要なデーターを取得
+  def calculate
+    @number = Answer.where(tweet_id: @tweet.id)
+    @correct_answer = AnswerResult.where(tweet_id: @tweet.id,result: 1)
   end
 
 end

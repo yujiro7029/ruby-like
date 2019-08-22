@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       get "search"
     end
     resources :comments,only:[:index,:new,:create,:destory] 
-    resources :answer_results,only:[:create] 
+    resources :answer_results,only:[:create,:destory,:index] 
     resources :answers do
       collection do
         get "judge"
