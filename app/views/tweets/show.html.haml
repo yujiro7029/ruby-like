@@ -4,7 +4,7 @@
   %p.flash= flash[:notice]
 .container-fluid
   .list-boxs
-    %h1.list-boxs__head__title 商品のタイトル
+    %h1.list-boxs__head__title=@tweet.title
     .list-boxs__head
       .list-boxs__head__user-image
         =image_tag(current_user&.image.to_s,class:"list-boxs__head__user-image")
@@ -16,10 +16,10 @@
           %tr
           %tr
             %td.list-boxs__head__list-details__table__td 投稿者
-            %td.list-boxs__head__list-details__table__td ユーザー名
+            %td.list-boxs__head__list-details__table__td=@tweet.user&.name
           %tr
             %td.list-boxs__head__list-details__table__td ジャンル
-            %td.list-boxs__head__list-details__table__td 選択問題
+            %td.list-boxs__head__list-details__table__td=type_judge
           %tr
             %td.list-boxs__head__list-details__table__td 正答率
             %td.list-boxs__head__list-details__table__td 50%
@@ -27,7 +27,7 @@
             %td.list-boxs__head__list-details__table__td 回答数
             %td.list-boxs__head__list-details__table__td 50
     %h2.list-boxs__head__link
-      - unless  (@tweet.user_id == current_user&.id) 
+      - unless  (@tweet.user_id == current_user&.id)||(@tweet.id == @check_tweet_id)||(@check_user_id == current_user&.id)
         =link_to "回答する",  new_tweet_answer_path(@tweet.id),class:"list-boxs__head__link"
     .list-boxs__under
       %p.list-boxs__under__theme 問題文のポイントを紹介

@@ -3,7 +3,7 @@
     %p.details-box__text=tweet.title
   .details-box__option
     - if user_signed_in? && (tweet.user_id == current_user&.id) 
-      = link_to tweet_path(tweet.id), method: :delete,class:"details-box__option__box" do
+      = link_to tweet_path(tweet.id), method: :delete,class:"details-box__option__box", data: {confirm: '本当に削除しますか?',cancel: 'やめる',commit: '削除する'},title: '削除確認' do
         =fa_icon("trash",class:"details-box__option__box__text-delete")
       = link_to edit_tweet_path(tweet.id),class:"details-box__option__box" do
         =fa_icon("edit",class:"details-box__option__box__text-edit")

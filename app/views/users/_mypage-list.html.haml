@@ -9,4 +9,8 @@
     %li.mypage__side__list__item
       = link_to "いいね数", likes_list_users_path, class: "mypage__side__list__item"
     %li.mypage__side__list__item
+      = link_to "編集",edit_user_registration_path,class: "mypage__side__list__item"
+    %li.mypage__side__list__item
+      = link_to "削除",user_registration_path,method: :delete, class: "mypage__side__list__item", data: {confirm: '本当に削除しますか?',cancel: 'やめる',commit: '削除する'},title: '削除確認'
+    %li.mypage__side__list__item
       = link_to "ログアウト",destroy_user_session_path,method: :delete, class: "mypage__side__list__item"

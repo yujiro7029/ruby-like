@@ -14,7 +14,10 @@
             %th 詳細
           %tr
             %td 名前
-            %td=current_user&.name
+            %td=link_to current_user&.name,edit_user_registration_path
           %tr
             %td email
-            %td=current_user&.email
+            %td=link_to current_user&.email,edit_user_registration_path
+          %tr
+          %td パスワード
+          %td=link_to "**********",edit_user_registration_path

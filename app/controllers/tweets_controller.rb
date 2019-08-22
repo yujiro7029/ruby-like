@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
 
   before_action :find_tweet,only:[:update,:show,:edit,:destroy]
   before_action :set_tweet,only:[:new,:select,:description]
-  before_action :authenticate_user!,except:[:index,:show]
+  before_action :authenticate_user!,except:[:index,:show,:select_problem,:description_problem,:new_tweet]
 
 # セレクトが２記述が１
   def index
