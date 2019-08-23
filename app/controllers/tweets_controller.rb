@@ -72,11 +72,7 @@ class TweetsController < ApplicationController
   def search
     @all_problems = Tweet.all.limit(100)
     @problems = params[:page][:name]
-    if @problems.present?
-      @tweet_search = Tweet.tweet_search( @problems)
-    else
-      flash[:notice] = '検索がうまくできませんでした。'
-    end
+    @tweet_search = Tweet.tweet_search( @problems) if @problems.present?
   end
 
 

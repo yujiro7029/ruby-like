@@ -2,7 +2,11 @@ module TweetsHelper
 
   # 検索結果にて表示の切り替え
   def search_judgment
-    "#{@problems} の検索結果" if  @tweet_search.present?
+   if   @tweet_search.present?
+    "#{@problems} の検索結果"
+   else
+    p "検索できませんでした"
+   end 
   end
 
   def search_count
