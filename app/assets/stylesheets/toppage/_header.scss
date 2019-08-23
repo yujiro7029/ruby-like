@@ -3,10 +3,10 @@ header{
   margin: 30px 0 0 0;
 }
 .main-left{
-  padding:5px 0 0 0;
+  margin-top: 40px;
   height: 100px;
-  font-size: 40px;
-  width: 30%;
+  font-size: 50px;
+  font-family: 'Amatic SC', cursive;
   color: pink;
   text-align: center;
     &__text{
@@ -19,8 +19,8 @@ header{
     }
 }
 .main-right{
+  margin-top: 40px;
   height: 100px;
-  width: 70%;
     &__mypage{
       padding:0 10px 0 0;
       width: 90%;
@@ -41,6 +41,18 @@ input.main-right__search-box {
   height: 40px;
   padding-left: 20px;
 }
+
+// レスポンシブした検索フォームに対応
+
+.responsive-from{
+  margin: 0 auto;
+  display: inline-block;
+  width: 100%;
+}
+.col-xs-12.d-xl-none.search-box {
+  width: 100%;
+}
+
 // アイコン
 i.fa.fa-search.fa-search-icon {
   font-size: 20px;
@@ -70,4 +82,12 @@ i.fa.fa-search.fa-search-icon {
 
 .search-box__buttom{
   height:38px;
+}
+
+
+// レスポンシブさせたMENUボタンの位置を右側に調整
+.col-xs-2.d-xl-none.lists{
+  width: 80%;
+  text-align: right;
+  margin: 0 auto;
 }

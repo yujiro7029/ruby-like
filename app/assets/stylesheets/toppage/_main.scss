@@ -1,25 +1,22 @@
-.index-boxs{
-  width: 90%;
-  margin: 0 auto;
-}
 
 .problem-box{
-  margin: 0 30px 0 30px;
   height:250px;
   font-weight: bold;
   color: #6091d3;/*文字色*/
   background: #FFF;
   border: solid 3px #6091d3;/*線*/
   border-radius: 10px;/*角の丸み*/
+  margin: 40px 0 40px 0;
     &__text{
-      width:300px;
       height:200px;
       padding:20px 5px 0 5px;
       text-align: center;
       word-break:break-all;
+      
     }
     &__option{
       text-align: center;
+      
     }
 }
 
@@ -91,7 +88,11 @@ p.answer-button__text {
   color:white;
 }
 
-// もっと見る　一覧詳細ページ
+// もっと見る 一覧詳細ページ
+
+.details-problem{
+  width: 100%;
+}
 
 .detail-boxs{
   width: 70%;

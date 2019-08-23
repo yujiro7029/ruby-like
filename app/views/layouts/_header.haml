@@ -1,23 +1,46 @@
 .container-fluid
-  %header
-    .main-left
-      =fa_icon("heart")
-      = link_to "RUBY-LIKE",root_path,class:"main-left__text"
-      %p.main-left__comment 問題を解いて好きになろう
-    .main-right
-      .main-right__search-box
-        = form_tag search_tweets_path,method: :get,class:"a" do
-          = text_field :page,:name, placeholder:"何かお探しですか？",class:"main-right__search-box"
-          = button_tag  class:"search-box__buttom" do
-            =fa_icon("search search-icon")
-      -if  user_signed_in?
-        .main-right__mypage
-          =image_tag(current_user&.image.to_s,class:"main-right__mypage__image")
-          =link_to "#{current_user&.name}",users_path
-      -else
-        .main-right__mypage
-          =link_to "新規登録",new_user_registration_path
-          =link_to "ログイン",new_user_session_path
-  .breadcrumbs-box
-    = breadcrumbs separator: " &rsaquo; " 
+  .row
+    .col-xs-10.col-xl-4
+      .main-left
+        =fa_icon("heart")
+        = link_to "RUBY-LIKE",root_path,class:"main-left__text"
+        %p.main-left__comment 問題を解いて好きになろう
+    .col-xl-8.d-none.d-xl-block
+      .main-right
+        .main-right__search-box
+          = form_tag search_tweets_path,method: :get,class:"a" do
+            = text_field :page,:name, placeholder:"何かお探しですか？",class:"main-right__search-box"
+            = button_tag  class:"search-box__buttom" do
+              =fa_icon("search search-icon")
+        -if  user_signed_in?
+          .main-right__mypage
+            =image_tag(current_user&.image.to_s,class:"main-right__mypage__image")
+            =link_to "#{current_user&.name}",users_path
+        -else
+          .main-right__mypage
+            =link_to "新規登録",new_user_registration_path
+            =link_to "ログイン",new_user_session_path
+    -# 大画面以外はリスト表示させる
+    .col-xs-2.d-xl-none.lists
+      .btn-group.dropright
+        .dropdown.list
+          %button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+            MENU
+          .dropdown-menu{"aria-labelledby" => "dropdownMenuButton"}
+            -if user_signed_in?
+              =link_to "マイページ",users_path,class:"dropdown-item"
+              =link_to "問題を投稿する",new_tweet_path,class:"dropdown-item"
+            -else
+              =link_to "新規登録",new_user_registration_path,class:"dropdown-item"
+              =link_to "ログイン",new_user_session_path,class:"dropdown-item"
+  .row
+    .col-xs-12.d-xl-none.search-box
+      = form_tag search_tweets_path,method: :get,class:"responsive-from" do
+        = text_field :page,:name, placeholder:"何かお探しですか？",class:"main-right__search-box"
+        = button_tag  class:"search-box__buttom" do
+          =fa_icon("search search-icon")
+    .breadcrumbs-box
+      = breadcrumbs separator: " &rsaquo; " 
+   
+
 
