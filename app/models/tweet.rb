@@ -3,7 +3,7 @@ class Tweet < ApplicationRecord
   validates :content, uniqueness: true
   has_many :answers
   has_many :comments
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :flags
   has_many :answer_results
   belongs_to :user
@@ -15,10 +15,10 @@ class Tweet < ApplicationRecord
   scope :new_problem, ->{all.order(created_at: :DESC)}
 
 
-  #検索機能　gem 'search_cop'の呼び出し
+  #検索機能 gem 'search_cop'の呼び出し
   include SearchCop
 
-  #検索機能　gem 'search_cop'scope名と検索対象とするカラムを設定
+  #検索機能 gem 'search_cop'scope名と検索対象とするカラムを設定
   search_scope :tweet_search do
     attributes :content,:title
   end

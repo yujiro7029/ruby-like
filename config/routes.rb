@@ -30,8 +30,8 @@ Rails.application.routes.draw do
     end
   end 
   #いいね機能
-  post "likes/:tweet_id/create", to:"likes#create"
-  delete "likes/:tweet_id/create", to:"likes#destroy"
+  post "likes/:tweet_id/create", to:"likes#create", as: 'like'
+  delete "likes/:tweet_id/delete", to:"likes#destroy",as:'unlike'
  
   #flag機能
   get "flags/:tweet_id/new", to: "flags#new"

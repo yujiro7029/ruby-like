@@ -39,8 +39,7 @@
           .list-boxs__under__like-flag-boxs__like
             =fa_icon("heart")
             %span いいね!
-            =link_to root_path,class:"list-boxs__under__like-flag-boxs__like__number" do
-              %span.list-boxs__under__like-flag-boxs__like__number=like_judgment
+            =render partial:'likes/like'
           .list-boxs__under__like-flag-boxs__flag
             =fa_icon("flag")
             =flag_list
