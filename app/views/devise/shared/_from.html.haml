@@ -17,6 +17,8 @@
           = f.password_field :password, autocomplete: "new-password",class:"from__boxs__field",placeholder:"もう一度パスワードを入力してください"
         .from-boxs__box__titles__any 任意
         .from__boxs__field
-          = f.file_field :image,class:"from__boxs__field",placeholder:"もう一度パスワードを入力してください"
+          = f.file_field :image,class:"from__boxs__field",placeholder:"もう一度パスワードを入力してください",id: :book_img
+          .image-box
+            %img#img_prev{src:""}/
         .from__boxs__buttom
           = f.submit "新規登録",class:"from__boxs__buttom"
