@@ -22,7 +22,9 @@
           = f.password_field :current_password, autocomplete: "current-password",class:"from__boxs__field",placeholder:"古いパスワードを入力してください"
         .from-boxs__box__titles__any 任意
         .from__boxs__field
-          = f.file_field :image,class:"from__boxs__field"
+          = f.file_field :image,class:"from__boxs__field",id: :book_img
+          .image-box
+            %img#img_prev{src:""}/
         .from__boxs__buttom
           = f.submit "送信",class:"from__boxs__buttom"
 %h2.from-boxs__back 
