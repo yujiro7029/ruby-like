@@ -250,3 +250,18 @@ table tr:last-child td:last-child {
 .image-box {
   text-align: left;
 }
+#book_img{
+  color: white;
+  
+  padding: 0 0 0 0;
+  margin: 0 20px 0 0;
+
+}
+
+// file filedの表示
+.custom-file {
+  overflow: hidden;
+}
+.custom-file-label {
+  white-space: nowrap;
+}

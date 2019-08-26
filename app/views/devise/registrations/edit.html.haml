@@ -22,7 +22,9 @@
           = f.password_field :current_password, autocomplete: "current-password",class:"from__boxs__field",placeholder:"古いパスワードを入力してください"
         .from-boxs__box__titles__any 任意
         .from__boxs__field
-          = f.file_field :image,class:"from__boxs__field",id: :book_img
+          .custom-file
+            = f.file_field :image,class:"from__boxs__field",id: :customFile,class:"custom-file-input"
+            %label.custom-file-label{"data-browse" => "参照", for: "customFile"} ファイル選択...
           .image-box
             %img#img_prev{src:""}/
         .from__boxs__buttom

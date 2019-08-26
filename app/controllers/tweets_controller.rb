@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
   before_action :calculate,only:[:show]
 
 
-# セレクトが２記述が１
+# 選択式が２記述が１
   def index
     @select_problem = Tweet.type(2).limit(4)
     @description_problem = Tweet.type(1).limit(4)
