@@ -34,9 +34,11 @@ class TweetsController < ApplicationController
   def show
     @comments = @tweet.comments.limit(3)
     @result = @correct_answer.count.to_f / (@number.count).round(1) if @correct_answer.present? &&  @number.present?
+   
   end
 
   def edit
+   
     if @tweet.type_problem == 2
       render "tweets/select"
     else

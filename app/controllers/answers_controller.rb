@@ -5,6 +5,7 @@ class AnswersController < ApplicationController
   before_action :set_answer,only:[:description_answer,:select_answer,:index,:new,:check]
   before_action :set_answer_result,only:[:judge]
   before_action :judge_problem,only:[:judge]
+  before_action :judge_select_problem,only:[:judge]
   before_action :authenticate_user!
 
   def index   
@@ -108,6 +109,17 @@ private
       @correct_list = "正解は回答その5でした！"
       @correct_problem5 = 1
     end
+  end
+
+  # 選択問題の答えを抽出
+
+  def judge_select_problem
+    if (@answer.judge_problem1 == @correct_problem1)||(@answer.judge_problem2 == @correct_problem2)||(@answer.judge_problem3 == @correct_problem3)||(@answer.judge_problem4 == @correct_problem4)||(@answer.judge_problem5 == @correct_problem5)
+      @result_number = 1
+    else
+      @result_number = 0
+    end
+  
   end
 
 end

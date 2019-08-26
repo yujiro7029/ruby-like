@@ -16,7 +16,7 @@
       = form_for [@tweet,@answer_result] do |f|
         #hidden
           .check_boxs
-            = f.select :result,[1]
+            = f.select :result,[@result_number]
             = f.select :answer_id,[@answer.id]
         .from-boxs__box
           = f.submit "結果を送信",class:"from-boxs__box__start-buttom"
