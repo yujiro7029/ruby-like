@@ -2,6 +2,14 @@ class Tweet < ApplicationRecord
   validates :content, presence: true, uniqueness: true
   validates :title, presence: true, uniqueness: true
   validates :point, presence: true
+  validates :select_problem1, presence: true
+  validates :select_problem2, presence: true
+  validates :select_problem3, presence: true
+  validates :select_problem4, presence: true
+  validates :select_problem5, presence: true
+
+
+
 
   has_many :answers
   has_many :comments
