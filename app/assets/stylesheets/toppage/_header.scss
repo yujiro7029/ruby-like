@@ -49,8 +49,10 @@ input.main-right__search-box {
   display: inline-block;
   width: 100%;
 }
-.col-xs-12.d-xl-none.search-box {
-  width: 100%;
+.col-xs-8.d-xl-none.search-box {
+  width: 90%;
+  margin: 0 auto;
+  display: inline-block;
 }
 
 // アイコン

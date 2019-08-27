@@ -1,6 +1,6 @@
 .container-fluid
   .row
-    .col-xs-10.col-xl-4
+    .col-xs-12.col-xl-4
       .main-left
         =fa_icon("heart")
         = link_to "RUBY-LIKE",root_path,class:"main-left__text"
@@ -21,8 +21,15 @@
             =link_to "新規登録",new_user_registration_path
             =link_to "ログイン",new_user_session_path
     -# 大画面以外はリスト表示させる
-    .col-xs-2.d-xl-none.lists
-      .btn-group.dropright
+  .row
+    
+    .col-xs-8.d-xl-none.search-box
+      = form_tag search_tweets_path,method: :get,class:"responsive-from" do
+        = text_field :page,:name, placeholder:"何かお探しですか？",class:"main-right__search-box"
+        = button_tag  class:"search-box__buttom" do
+          =fa_icon("search search-icon")
+    .col-xs-4.d-xl-none.lists
+      .btn-group.dropleft
         .dropdown.list
           %button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
             MENU
@@ -33,12 +40,7 @@
             -else
               =link_to "新規登録",new_user_registration_path,class:"dropdown-item"
               =link_to "ログイン",new_user_session_path,class:"dropdown-item"
-  .row
-    .col-xs-12.d-xl-none.search-box
-      = form_tag search_tweets_path,method: :get,class:"responsive-from" do
-        = text_field :page,:name, placeholder:"何かお探しですか？",class:"main-right__search-box"
-        = button_tag  class:"search-box__buttom" do
-          =fa_icon("search search-icon")
+    
     .breadcrumbs-box
       = breadcrumbs separator: " &rsaquo; " 
    
