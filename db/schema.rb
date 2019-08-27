@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(version: 2019_08_06_125857) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
-    t.string "select_problem1", null: false
-    t.string "select_problem2", null: false
-    t.string "select_problem3", null: false
-    t.string "select_problem4", null: false
-    t.string "select_problem5", null: false
+    t.integer "judge_problem1", null: false
+    t.integer "judge_problem2", null: false
+    t.integer "judge_problem3", null: false
+    t.integer "judge_problem4", null: false
+    t.integer "judge_problem5", null: false
     t.bigint "user_id"
     t.bigint "tweet_id"
     t.datetime "created_at", null: false
