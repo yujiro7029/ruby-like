@@ -1,37 +1,40 @@
 # アプリの目的
-rubyの問題文をクイズ形式で出し合い理解を深めるゲーム(自分で使いたいから)
-単語帳のように気軽に使う事ができ、覚えて置きたいメソッドや型を理解できる
+rubyの問題文をクイズ形式で出し合い理解を深めるアプリケーション。
+単語帳のように気軽に使う事ができ、覚えて置きたいメソッドや型をメモがわりに使用もできる。
+
+#作成の背景
+
+学習効率をあげるには<アウトプット>が重要と理解しています。
+自身で学んだ内容を考えて投稿する事で、知識が定着し、学習効率をアップさせるだけでなく、他ユーザーが投稿した問題を回答する事で、知識の向上も期待できます。
+rubyを学び始めて、多くの問題に触れて見たいとの欲求を具現化するために作成しました。
 
 
 # アプリの仕様
-- (1)ユーザーが問題を投稿、削除、編集ができる
-- (2)ユーザーが問題をとく事ができる
-- (3)ユーザーが答えとその問題のポイントをしる事ができる
-- (4)ユーザーが問題の評価ができる
-- (5)投稿に対してコメントができる
-- (6)rubyコードに対応した投稿画面である
-- (7)人気ランキング表示機能
-- (8)ユーザーがといた問題が表示できる機能
-- (9)投稿したユーザーのみが編集と削除ができる
+- ユーザーの新規登録、ログイン,編集、削除機能
+- 問題を(選択式)または(記述式)を選び投稿、削除、編集機能
+- 投稿された問題の種別に合わせて回答機能
+- 投稿された問題に対してのいいね機能
+- 投稿された問題に対してコメント機能
+- 検索機能
+- 投稿された問題の正答率、回答数表示機能
+- 不適切な問題の報告機能（違反者通告機能）
+- レスポンシブ対応(headerや一覧表示など)
 
 
-# 追加実装して行きたい内容
-- あなたにオススメの問題として表示する(タグ付けをする機能がいる)
-- コメント機能の非同期通信
-- 問題文投稿のインクルメンタルサーチ機能
-- 問題文をnetに転がっている引っ張ってくる機能（API）
-
-
-# usersテーブル
+# usersテーブル deviseを使用
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|image|string||
 
 ### Association
-- has_many :tweets
 - has_many :comments
 - has_many :likes
+- has_many :flags
+- has_many :tweets
+- has_many :answers
+- has_many :answer_results
 
 # tweetsテーブル
 
@@ -39,22 +42,75 @@ rubyの問題文をクイズ形式で出し合い理解を深めるゲーム(自
 |------|----|-------|
 |content|text|null: false|
 |point|text|null: false|
+|title|string|null: false|
+|type_problem|integer|null: false|
+|select_problem1|string|null: false|
+|select_problem2|string|null: false|
+|select_problem3|string|null: false|
+|select_problem4|string|null: false|
+|select_problem5|string|null: false|
+|judge_problem1|integer|null: false|
+|judge_problem2|integer|null: false|
+|judge_problem3|integer|null: false|
+|judge_problem4|integer|null: false|
+|judge_problem5|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
+
+
+
+### Association
+- has_many :answers
+- has_many :comments
+- has_many :likes, dependent: :destroy
+- has_many :flags
+- has_many :answer_results
+- belongs_to :user
+
+
+# answersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|content|text|null: false|
+|type_problem|integer|null: false|
+|judge_problem1|integer|null: false|
+|judge_problem2|integer|null: false|
+|judge_problem3|integer|null: false|
+|judge_problem4|integer|null: false|
+|judge_problem5|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
+|tweet_id|references|null: false, foreign_key: true|
+
+
 
 ### Association
 
-- belong_to :user
-- has_many :comments
-- has_many :evaluations
-- has_many :tweet_tags
-- has_many :tags, through: :tweet_tags
+- belongs_to :tweet
+- belongs_to :user
+- has_many :answer_results
 
+# answer_resultsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|result|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
+|tweet_id|references|null: false, foreign_key: true|
+|answer_id|references|null: false, foreign_key: true|
+
+
+
+### Association
+
+- belongs_to :tweet
+- belongs_to :user
+- belongs_to :answer
 
 # commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|comment|text|null: false|
+|text|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 |tweet_id|references|null: false, foreign_key: true|
 
@@ -62,40 +118,24 @@ rubyの問題文をクイズ形式で出し合い理解を深めるゲーム(自
 - belong_to :user
 - belong_to :tweet
 
-# evaluationsテーブル
+# likesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|evaluation|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 |tweet_id|references|null: false, foreign_key: true|
-
-
-### Association
-- belongs_to :tweet
-- belongs_to :user
-
-# tagテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|tag|string|null: false|
-|user_id|references|null: false, foreign_key: true|
-
 
 ### Association
 - belong_to :user
-- has_many :tweet_tags
-- has_many :tweets, through: :tweet_tags
+- belong_to :tweet
 
-# tweet_tagテーブル
+# flagsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
+|user_id|references|null: false, foreign_key: true|
 |tweet_id|references|null: false, foreign_key: true|
-|tag_id|references|null: false, foreign_key: true|
-
 
 ### Association
+- belong_to :user
 - belong_to :tweet
-- belong_to :tag
