@@ -3,3 +3,8 @@
     = link_to tweet&.title, tweet_path(tweet.id),class:"answer-boxs__option__box__text-anawer"
     =fa_icon("heart",class:"answer-box__option__box__text-like")
     %span.answer-boxs__option__box__text-like=tweet.likes.count
+    - if user_signed_in? && (tweet.user_id == current_user&.id) 
+      = link_to edit_tweet_path(tweet.id) do
+        =fa_icon("edit")
+      = link_to tweet_path(tweet.id), method: :delete, data: {confirm: '本当に削除しますか?',cancel: 'やめる',commit: '削除する'},title: '削除確認' do
+        =fa_icon("trash")
