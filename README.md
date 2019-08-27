@@ -25,7 +25,7 @@ Rubyを学び始めて、多くの問題に触れたいとの欲求を具現化�
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false,unique: true|
 |image|string||
 
 ### Association
@@ -72,7 +72,6 @@ Rubyを学び始めて、多くの問題に触れたいとの欲求を具現化�
 |Column|Type|Options|
 |------|----|-------|
 |content|text|null: false|
-|type_problem|integer|null: false|
 |judge_problem1|integer|null: false|
 |judge_problem2|integer|null: false|
 |judge_problem3|integer|null: false|

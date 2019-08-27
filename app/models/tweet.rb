@@ -1,6 +1,8 @@
 class Tweet < ApplicationRecord
-  validates :content, presence: true
-  validates :content, uniqueness: true
+  validates :content, presence: true, uniqueness: true
+  validates :title, presence: true, uniqueness: true
+  validates :point, presence: true
+
   has_many :answers
   has_many :comments
   has_many :likes, dependent: :destroy

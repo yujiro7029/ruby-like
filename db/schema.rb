@@ -10,76 +10,88 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_08_045525) do
+ActiveRecord::Schema.define(version: 2019_08_06_125857) do
 
   create_table "answer_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "result"
-    t.integer "tweet_id"
-    t.integer "user_id"
+    t.integer "result", null: false
+    t.bigint "user_id"
+    t.bigint "tweet_id"
+    t.bigint "answer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "answer_id"
+    t.index ["answer_id"], name: "index_answer_results_on_answer_id"
+    t.index ["tweet_id"], name: "index_answer_results_on_tweet_id"
+    t.index ["user_id"], name: "index_answer_results_on_user_id"
   end
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "content"
+    t.text "content", null: false
+    t.string "select_problem1", null: false
+    t.string "select_problem2", null: false
+    t.string "select_problem3", null: false
+    t.string "select_problem4", null: false
+    t.string "select_problem5", null: false
+    t.bigint "user_id"
+    t.bigint "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "tweet_id"
-    t.integer "judge_problem1"
-    t.integer "judge_problem2"
-    t.integer "judge_problem3"
-    t.integer "judge_problem4"
-    t.integer "judge_problem5"
-    t.integer "user_id"
+    t.index ["tweet_id"], name: "index_answers_on_tweet_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text"
-    t.integer "tweet_id"
-    t.integer "user_id"
+    t.bigint "user_id"
+    t.bigint "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tweet_id"], name: "index_comments_on_tweet_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "flags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "tweet_id"
+    t.bigint "user_id"
+    t.bigint "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tweet_id"], name: "index_flags_on_tweet_id"
+    t.index ["user_id"], name: "index_flags_on_user_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "tweet_id"
+    t.bigint "user_id"
+    t.bigint "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tweet_id"], name: "index_likes_on_tweet_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "content"
-    t.text "point"
+    t.text "content", null: false
+    t.text "point", null: false
+    t.string "title", null: false
+    t.integer "type_problem", null: false
+    t.integer "judge_problem1", null: false
+    t.integer "judge_problem2", null: false
+    t.integer "judge_problem3", null: false
+    t.integer "judge_problem4", null: false
+    t.integer "judge_problem5", null: false
+    t.string "select_problem1", null: false
+    t.string "select_problem2", null: false
+    t.string "select_problem3", null: false
+    t.string "select_problem4", null: false
+    t.string "select_problem5", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "title"
-    t.integer "type_problem"
-    t.string "select_problem1"
-    t.string "select_problem2"
-    t.string "select_problem3"
-    t.string "select_problem4"
-    t.string "select_problem5"
-    t.integer "judge_problem1"
-    t.integer "judge_problem2"
-    t.integer "judge_problem3"
-    t.integer "judge_problem4"
-    t.integer "judge_problem5"
-    t.integer "user_id"
+    t.index ["user_id"], name: "index_tweets_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "name"
+    t.string "name", null: false
     t.string "image"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -90,4 +102,16 @@ ActiveRecord::Schema.define(version: 2019_08_08_045525) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answer_results", "answers"
+  add_foreign_key "answer_results", "tweets"
+  add_foreign_key "answer_results", "users"
+  add_foreign_key "answers", "tweets"
+  add_foreign_key "answers", "users"
+  add_foreign_key "comments", "tweets"
+  add_foreign_key "comments", "users"
+  add_foreign_key "flags", "tweets"
+  add_foreign_key "flags", "users"
+  add_foreign_key "likes", "tweets"
+  add_foreign_key "likes", "users"
+  add_foreign_key "tweets", "users"
 end
