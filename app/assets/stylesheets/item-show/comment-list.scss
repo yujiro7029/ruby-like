@@ -12,9 +12,7 @@
   border-radius:50%;
   width: 10%;
 }
-img.list-boxs__comments__comment__image {
-  width: 80%;
-}
+
 
 // コメント文字
 p.list-boxs__comments__comment__text{
@@ -33,4 +31,10 @@ a.list-boxs__comments__more {
 .comment-boxs{
   width: 70%;
   margin: 50px auto;
+}
+@media(max-width:1200px){
+  a.list-boxs__comments__more {
+ font-size: 30px;
+  }
+
 }

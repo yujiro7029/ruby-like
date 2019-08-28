@@ -26,7 +26,7 @@
             background-color: blue;
             padding:0 0 0 0;
             margin: 0 20px 0 0;
-            width: 40px;
+            width: 20%;
 
           }
           &__title{
@@ -269,9 +269,42 @@ table tr:last-child td:last-child {
 @media(max-width:1200px){
   .from-boxs{
     font-size: 30px;
+    width: 100%;
   }
   h2.from-boxs__back {
     font-size: 30px;
+  }
+  .from.from-box{
+    font-size: 30px;
+  }
+  label.custom-file-label{
+    font-size: 25px;
+  }
+  .from__boxs__field{
+    font-size: 25px;
+  }
+  .list-boxs__comments__comment{
+    font-size: 30px;
+  }
+  input#answer_judge_problem1 {
+    width: 60px;
+    height: 60px;
+  }
+  input#answer_judge_problem2 {
+    width: 60px;
+    height: 60px;
+  }
+  input#answer_judge_problem3 {
+    width: 60px;
+    height: 60px;
+  }
+  input#answer_judge_problem4 {
+    width: 60px;
+    height: 60px;
+  }
+  input#answer_judge_problem5 {
+    width: 60px;
+    height: 60px;
   }
   
 }
