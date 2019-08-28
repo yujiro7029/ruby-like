@@ -41,26 +41,6 @@ input.main-right__search-box {
   padding-left: 20px;
 }
 
-// レスポンシブした検索フォームに対応
-
-.responsive-from{
-  margin: 0 auto;
-  display: inline-block;
-  width: 100%;
-}
-.col-xs-8.d-xl-none.search-box {
-  width: 50%;
-  margin: 40px 0 0 100px;
-  display: inline-block;
-}
-
-.col-xs-4.d-xl-none.lists {
-  text-align: center;
-}
-// ヘッダーのボックスリスト
-.card.header {margin: 40px 0 0 50px;
-}
-
 // アイコン
 i.fa.fa-search.fa-search-icon {
   font-size: 20px;
@@ -68,7 +48,6 @@ i.fa.fa-search.fa-search-icon {
 }
 
 // マイページの画像
-
 .main-right__mypage__image{
   margin:5px 5px 0 0;
   width: 50px;
@@ -77,7 +56,6 @@ i.fa.fa-search.fa-search-icon {
 }
 
 // パンクズ
-
 .breadcrumbs-box{
   width: 90%;
   margin: 10px auto;
@@ -87,7 +65,6 @@ i.fa.fa-search.fa-search-icon {
 }
 
 // 検索ボタン
-
 .search-box__buttom{
   height:38px;
 }
@@ -98,4 +75,35 @@ i.fa.fa-search.fa-search-icon {
   width: 80%;
   text-align: right;
   margin: 0 auto;
+}
+
+
+@media(max-width:1200px){
+  .main-left{
+    font-size: 100px;
+    margin: 0 0 100px 0;
+  }
+  .main-left__comment {
+    font-size: 25px;
+  }
+  input.main-right__search-box {
+    font-size: 50px;
+    height: 70px;
+  }
+  i.fa.fa-search.fa-search-icon {
+    font-size: 50px;
+  }
+  .col-xs-12.d-xl-none.lists.menu {
+    font-size: 50px;
+  }
+  .card.header {
+    margin: 50px 0 0 70px;
+  }
+}
+
+// 検索画面携帯サイズよう
+.col-xs-12.d-xl-none.search-box {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
 }

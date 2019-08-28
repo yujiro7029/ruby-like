@@ -37,11 +37,11 @@
       - if user_signed_in?
         .list-boxs__under__like-flag-boxs
           .list-boxs__under__like-flag-boxs__like
-            =fa_icon("heart")
-            %span いいね!
+            =fa_icon("heart",class:"from-icon")
+            %span.like いいね!
             =render partial:'likes/like'
           .list-boxs__under__like-flag-boxs__flag
-            =fa_icon("flag")
+            =fa_icon("flag",class:"from-icon")
             =flag_list
     -if @comments.present?
       %h1.list-boxs__head__title コメント一覧

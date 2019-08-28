@@ -116,3 +116,37 @@ a.list-boxs__comment-buttom {
   font-size: 20px;
   font-weight: bold;
 }
+
+@media(max-width:1200px){
+  .list-boxs{
+    font-size: 30px;
+  }
+
+
+  a.list-boxs__head__link {
+    font-size: 30px;
+  }
+  span.like {
+    display: none;
+  }
+  #flag_judgment{
+    color: #FFF;
+   
+   
+  }
+  .from-icon{
+  
+  }
+  .list-boxs__under__like-flag-boxs__like {
+    padding: 10px 10px 10px 10px;
+    width: 20%;
+  }
+  .list-boxs__under__like-flag-boxs__flag {
+    padding: 10px 10px 10px 10px;
+    width: 20%;
+  }
+    a.list-boxs__comment-buttom {
+      font-size: 30px;
+      font-weight: bold;
+  }
+}

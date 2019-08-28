@@ -14,7 +14,7 @@ module ApplicationHelper
     if Flag.find_by(user_id:current_user&.id,tweet_id: @tweet.id)
       p "報告済み"
     else
-      link_to "不適切な商品を報告","/flags/#{@tweet.id}/new",id:"like_judgment"
+      link_to "報告","/flags/#{@tweet.id}/new",id:"flag_judgment"
     end
   end
 end

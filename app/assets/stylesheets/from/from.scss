@@ -19,7 +19,7 @@
             background-color: red;
             padding:0 0 0 0;
             margin: 0 20px 0 0;
-            width: 40px;
+            width: 20%;
           }
           &__any{
             color: white;
@@ -52,7 +52,7 @@ h2.from-boxs__title {
 input.from-boxs__box__start-buttom{
 color: white;
 background-color: red;
-height: 50px;
+min-height: 50px;
 width: 100%;
 }
 
@@ -264,4 +264,14 @@ table tr:last-child td:last-child {
 }
 .custom-file-label {
   white-space: nowrap;
+}
+
+@media(max-width:1200px){
+  .from-boxs{
+    font-size: 30px;
+  }
+  h2.from-boxs__back {
+    font-size: 30px;
+  }
+  
 }
