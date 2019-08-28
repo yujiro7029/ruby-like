@@ -32,7 +32,8 @@ class TweetsController < ApplicationController
   
 
   def show
-    @comments = @tweet.comments.limit(3)
+   @image = @tweet.user.image
+    @comments = Comment.where(tweet_id: @tweet.id).order("RAND()").limit(3)
     @result = @correct_answer.count.to_f / (@number.count).round(1) if @correct_answer.present? &&  @number.present?
    
   end

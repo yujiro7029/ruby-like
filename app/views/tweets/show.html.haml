@@ -7,7 +7,7 @@
     %h1.list-boxs__head__title=@tweet.title
     .list-boxs__head
       .list-boxs__head__user-image
-        =image_tag(current_user&.image.to_s,class:"list-boxs__head__user-image")
+        =image_tag(@image.to_s,class:"list-boxs__head__user-image")
       .list-boxs__head__list-details
         %table
           %tr
