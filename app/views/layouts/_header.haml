@@ -22,25 +22,25 @@
             =link_to "ログイン",new_user_session_path
     -# 大画面以外はリスト表示させる
   .row
-    
-    .col-xs-8.d-xl-none.search-box
+
+    .col-xs-6.d-xl-none.search-box
       = form_tag search_tweets_path,method: :get,class:"responsive-from" do
         = text_field :page,:name, placeholder:"何かお探しですか？",class:"main-right__search-box"
         = button_tag  class:"search-box__buttom" do
           =fa_icon("search search-icon")
-    .col-xs-4.d-xl-none.lists
-      .btn-group.dropleft
-        .dropdown.list
-          %button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-            MENU
-          .dropdown-menu{"aria-labelledby" => "dropdownMenuButton"}
+    .col-xs-6.d-xl-none.lists
+      .card.header
+        #collapseListGroupHeading1.card-header{:role => "tab"}
+          %h5.mb-0
+            %a.collapsed.text-body{"aria-controls" => "collapseListGroup1", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#collapseListGroup1", :role => "button"}MENU
+        #collapseListGroup1.collapse{"aria-expanded" => "false", "aria-labelledby" => "collapseListGroupHeading1", :role => "tabpanel"}
+          %ul.list-group.list-group-flush
             -if user_signed_in?
-              =link_to "マイページ",users_path,class:"dropdown-item"
-              =link_to "問題を投稿する",new_tweet_path,class:"dropdown-item"
+              %li.list-group-item=link_to "マイページ",users_path,class:"dropdown-item"
+              %li.list-group-item=link_to "問題を投稿する",new_tweet_path,class:"dropdown-item"
             -else
-              =link_to "新規登録",new_user_registration_path,class:"dropdown-item"
-              =link_to "ログイン",new_user_session_path,class:"dropdown-item"
-    
+              %li.list-group-item=link_to "新規登録",new_user_registration_path,class:"dropdown-item"
+              %li.list-group-item=link_to "ログイン",new_user_session_path,class:"dropdown-item"
     .breadcrumbs-box
       = breadcrumbs separator: " &rsaquo; " 
    
