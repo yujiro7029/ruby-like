@@ -277,7 +277,7 @@ table tr:last-child td:last-child {
   }
   .from.from-box{
     font-size: 30px;
-    width: 100%;
+    width: 80%;
   }
   label.custom-file-label{
     font-size: 25px;
@@ -310,6 +310,9 @@ table tr:last-child td:last-child {
   }
   #responsive{
     display: none;
+  }
+  input.from-boxs__box__start-buttom {
+    line-height: 3;
   }
   
 }

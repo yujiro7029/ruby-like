@@ -12,7 +12,7 @@ module ApplicationHelper
   # tweets/show不適切な問題の報告
   def flag_list
     if Flag.find_by(user_id:current_user&.id,tweet_id: @tweet.id)
-      p "報告済み"
+      p "済"
     else
       link_to "報告","/flags/#{@tweet.id}/new",id:"flag_judgment"
     end

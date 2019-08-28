@@ -91,15 +91,15 @@ private
       @correct_list = "正解は回答その2でした！"
       @correct_problem2 = 1
     elsif  (@tweet.judge_problem1 == 1)&&( @tweet.judge_problem2 == 1)&&( @tweet.judge_problem3 == 2)&&( @tweet.judge_problem4 == 1)&&( @tweet.judge_problem5 == 1)
-      @correct = @tweet.select_problem2
+      @correct = @tweet.select_problem3
       @correct_list = "正解は回答その3でした！"
       @correct_problem3 = 1
     elsif  (@tweet.judge_problem1 == 1)&&( @tweet.judge_problem2 == 1)&&( @tweet.judge_problem3 == 1)&&( @tweet.judge_problem4 == 2)&&( @tweet.judge_problem5 == 1)
-      @correct = @tweet.select_problem2
+      @correct = @tweet.select_problem4
       @correct_list = "正解は回答その4でした！"
       @correct_problem4 = 1
     else
-      @correct = @tweet.select_problem2
+      @correct = @tweet.select_problem5
       @correct_list = "正解は回答その5でした！"
       @correct_problem5 = 1
     end
