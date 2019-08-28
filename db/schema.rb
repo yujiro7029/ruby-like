@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(version: 2019_08_06_125857) do
 
   create_table "answer_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "result", null: false
-    t.bigint "user_id"
-    t.bigint "tweet_id"
-    t.bigint "answer_id"
+    t.integer "user_id"
+    t.integer "tweet_id"
+    t.integer "answer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["answer_id"], name: "index_answer_results_on_answer_id"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2019_08_06_125857) do
     t.integer "judge_problem3", null: false
     t.integer "judge_problem4", null: false
     t.integer "judge_problem5", null: false
-    t.bigint "user_id"
-    t.bigint "tweet_id"
+    t.integer "user_id"
+    t.integer "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tweet_id"], name: "index_answers_on_tweet_id"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 2019_08_06_125857) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text"
-    t.bigint "user_id"
-    t.bigint "tweet_id"
+    t.integer "user_id"
+    t.integer "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tweet_id"], name: "index_comments_on_tweet_id"
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2019_08_06_125857) do
   end
 
   create_table "flags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "tweet_id"
+    t.integer "user_id"
+    t.integer "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tweet_id"], name: "index_flags_on_tweet_id"
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 2019_08_06_125857) do
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "tweet_id"
+    t.integer "user_id"
+    t.integer "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tweet_id"], name: "index_likes_on_tweet_id"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_125857) do
     t.string "select_problem3", null: false
     t.string "select_problem4", null: false
     t.string "select_problem5", null: false
-    t.bigint "user_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_tweets_on_user_id"
@@ -102,16 +102,4 @@ ActiveRecord::Schema.define(version: 2019_08_06_125857) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "answer_results", "answers"
-  add_foreign_key "answer_results", "tweets"
-  add_foreign_key "answer_results", "users"
-  add_foreign_key "answers", "tweets"
-  add_foreign_key "answers", "users"
-  add_foreign_key "comments", "tweets"
-  add_foreign_key "comments", "users"
-  add_foreign_key "flags", "tweets"
-  add_foreign_key "flags", "users"
-  add_foreign_key "likes", "tweets"
-  add_foreign_key "likes", "users"
-  add_foreign_key "tweets", "users"
 end

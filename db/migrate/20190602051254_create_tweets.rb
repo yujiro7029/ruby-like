@@ -15,7 +15,7 @@ class CreateTweets < ActiveRecord::Migration[5.2]
       t.string :select_problem3, null: false
       t.string :select_problem4, null: false
       t.string :select_problem5, null: false
-      t.references :user, foreign_key: true
+      t.integer :user_id, index: true
       t.timestamps 
     end
   end

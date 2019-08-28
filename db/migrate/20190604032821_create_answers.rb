@@ -7,8 +7,8 @@ class CreateAnswers < ActiveRecord::Migration[5.2]
       t.integer :judge_problem3, null: false
       t.integer :judge_problem4, null: false
       t.integer :judge_problem5, null: false
-      t.references :user, foreign_key: true
-      t.references :tweet, foreign_key: true
+      t.integer :user_id, index: true
+      t.integer :tweet_id, index: true
       t.timestamps
     end
   end

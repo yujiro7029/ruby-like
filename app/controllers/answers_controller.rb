@@ -1,7 +1,6 @@
 class AnswersController < ApplicationController
   before_action :find_tweet,only:[:judge,:index,:new,:destroy]
   before_action :find_answer,only:[:judge,:index,:destroy]
-  before_action :find_answer_result,only:[:destroy]
   before_action :set_answer,only:[:description_answer,:select_answer,:index,:new,:check]
   before_action :set_answer_result,only:[:judge]
   before_action :judge_problem,only:[:judge]
@@ -45,8 +44,7 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-    @check_answer.delete if @check_answer
-    @answer.delete if @answer
+    @answer.destroy if @answer
     flash[:notice] = '回答結果の削除ができました'
     redirect_to controller: 'tweets', action: 'show'
   end
@@ -71,10 +69,6 @@ private
 
   def find_answer
     @answer = Answer.where(tweet_id: params[:tweet_id],user_id:current_user.id).last
-  end
-
-  def find_answer_result
-    @check_answer = AnswerResult.where(tweet_id: @tweet.id,user_id: current_user&.id).first
   end
  
   def set_answer

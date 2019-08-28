@@ -11,12 +11,12 @@ class Tweet < ApplicationRecord
 
 
 
-  has_many :answers
-  has_many :comments
-  has_many :likes, dependent: :destroy
-  has_many :flags
-  has_many :answer_results
-  belongs_to :user
+  has_many :answers,dependent: :destroy
+  has_many :comments,dependent: :destroy
+  has_many :likes,dependent: :destroy
+  has_many :flags,dependent: :destroy
+  has_many :answer_results,dependent: :destroy
+  belongs_to :user,optional: true
 
   #user ログインしているユーザーの投稿情報を取得
   scope :current, ->(user){where(user_id:  user)}

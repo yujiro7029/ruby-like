@@ -47,7 +47,7 @@ class TweetsController < ApplicationController
   end
 
   def destroy
-    @tweet.delete
+    @tweet.destroy
     flash[:notice] = '削除しました'
     redirect_to action: :index
   end
