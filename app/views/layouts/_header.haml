@@ -29,12 +29,12 @@
         #collapseListGroup1.collapse{"aria-expanded" => "false", "aria-labelledby" => "collapseListGroupHeading1", :role => "tabpanel"}
           %ul.list-group.list-group-flush
             =form_tag search_tweets_path,method: :get,class:"list-group-item" do
-              = text_field :page,:name, placeholder:"問題を検索できます"
+              = text_field :page,:name, placeholder:"問題を検索"
               = button_tag  class:"search-box__buttom" do
                 =fa_icon("search search-icon")
             -if user_signed_in?
               %li.list-group-item=link_to "マイページ",users_path,class:"dropdown-item"
-              %li.list-group-item=link_to "問題を投稿する",new_tweet_path,class:"dropdown-item"
+              %li.list-group-item=link_to "問題の投稿",new_tweet_path,class:"dropdown-item"
             -else
               %li.list-group-item=link_to "新規登録",new_user_registration_path,class:"dropdown-item"
               %li.list-group-item=link_to "ログイン",new_user_session_path,class:"dropdown-item"
