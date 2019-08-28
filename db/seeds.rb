@@ -1,7 +1,37 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Tweet.create!([
+                    { content: "Product.allで取得したインスタンスのクラスとして正しいものを選んでください",point:"ActiveRecordメソッドを把握しているかどうか",title:"ActiveRecordの問題",type_problem: 2,judge_problem1:2,judge_problem2:1,judge_problem3:1,judge_problem4:1,judge_problem5:1,select_problem1:"Array",select_problem2:"String",select_problem3:"Hash",select_problem4:"ActiveRecord::Relation",select_problem5:"group",user_id: 1,answer: "記述問題のため記入なし"},
+                    { content: "小数点ありの数値クラスのインスタンスに対して利用出来る小数点以下を四捨五入するメソッドを選んでください",point:"小数点以下を四捨五入するメソッドを把握しているかどうか",title:"小数点以下を四捨五入するメソッド",type_problem: 2,judge_problem1:2,judge_problem2:1,judge_problem3:1,judge_problem4:1,judge_problem5:1,select_problem1:"round",select_problem2:"average",select_problem3:"cell",select_problem4:"floor",select_problem5:"group",user_id: 1,answer: "記述問題のため記入なし"},
+                    { content: "インスタンスメソッド内でレシーバ自身を代入した変数として扱えるものを選んでください",point:"レシーバを把握しているか",title:"インスタンスメソッド内でレシーバ自身を代入した変数",type_problem: 2,judge_problem1:2,judge_problem2:1,judge_problem3:1,judge_problem4:1,judge_problem5:1,select_problem1:"odd",select_problem2:"self",select_problem3:"this",select_problem4:"build",select_problem5:"new",user_id: 1,answer: "記述問題のため記入なし"},
+                    { content: "あるコントローラのすべてのアクションで実行前に共通の処理を行いときに設定するbefore_actionの使い方として正しいものを選んでください",point:"before_actionの使い方を把握しているかどうか",title:"before_actionの形の問題",type_problem: 2,judge_problem1:2,judge_problem2:1,judge_problem3:1,judge_problem4:1,judge_problem5:1,select_problem1:"before_action :configure_title",select_problem2:"before_action, :configure_title",select_problem3:"before_action: :configure_title",select_problem4:"before_action: configure_title",select_problem5:":before_action: => configure_title",user_id: 1,answer: "記述問題のため記入なし"},
+                    { content: "クラスの継承の記述の仕方として正しいものを選んでください",point:"クラス継承の記述を把握しているかどうか",title:"クラスの継承について",type_problem: 2,judge_problem1:1,judge_problem2:1,judge_problem3:2,judge_problem4:1,judge_problem5:1,select_problem1:"class DogController >> AnimalController",select_problem2:"class DogController > AnimalController",select_problem3:"class DogController << AnimalController",select_problem4:"class DogController < AnimalController",select_problem5:"group",user_id: 1,answer: "記述問題のため記入なし"},
+                    
+                    { content: "ユーザーに数字を入力してもらい、その数の回数だけHello!と表示させるコードを記述してください。",
+                    point:"繰り返しをどのように表現するのか",
+                    title:"入力した回数だけHello!",
+                    answer: "a",
+                    type_problem: 1,judge_problem1:3,judge_problem2:3,judge_problem3:3,judge_problem4:3,judge_problem5:3,select_problem1:"選択なし",select_problem2:"選択なし",select_problem3:"選択なし",select_problem4:"選択なし",select_problem5:"選択なし",user_id: 1},
+                    { content: "linuxではディレクトリやファイルを階層構造で管理します。「ルートディレクトリ」「ホームディレクトリ」とは何ですか。それぞれ一言で説明してください。",
+                    point:"特になし",
+                    title:"ファイルの構造について",
+                    answer: "「ルートディレクトリ」　階層構造の最上位にあるディレクトリ。「ホームディレクトリ」　各ユーザーに割り当てられたディレクトリ",
+                    type_problem: 1,judge_problem1:3,judge_problem2:3,judge_problem3:3,judge_problem4:3,judge_problem5:3,select_problem1:"選択なし",select_problem2:"選択なし",select_problem3:"選択なし",select_problem4:"選択なし",select_problem5:"選択なし",user_id: 1},
+                    { content: "「ルートディレクトリ」「ホームディレクトリ」それぞれに移動するため、ターミナルで打つべきコマンドを答えてください。",
+                    point:"ターミナルで打つべきコマンドを把握しているか",
+                    title:"ルートディレクトリ、ホームディレクトリのコマンドについて",
+                    answer: "・ルートディレクトリへの移動、> cd /・ホームディレクトリへの移動,> cd ~",
+                    type_problem: 1,judge_problem1:3,judge_problem2:3,judge_problem3:3,judge_problem4:3,judge_problem5:3,select_problem1:"選択なし",select_problem2:"選択なし",select_problem3:"選択なし",select_problem4:"選択なし",select_problem5:"選択なし",user_id: 1},
+                    { content: "ターミナルでは、フォルダやファイル名の補完機能が使えます。これは具体的にどのような機能なのか説明してください。",
+                    point:"フォルダやファイル名の補完機能を知っているか",
+                    title:"フォルダやファイル名の補完機能（ターミナル）",
+                    answer: "ターミナルでファイル名等の入力をするときに、途中まで入力してからTabキーを押すと、残りに文字が自動で入力される。該当するファイル等が複数ある場合は、Tabを２回押すと候補のリストが表示される。",
+                    type_problem: 1,judge_problem1:3,judge_problem2:3,judge_problem3:3,judge_problem4:3,judge_problem5:3,select_problem1:"選択なし",select_problem2:"選択なし",select_problem3:"選択なし",select_problem4:"選択なし",select_problem5:"選択なし",user_id: 1},
+                    { content: "RailsアプリケーションでのCSS、 SCSSのインポートに関する問題です。rails newを実行しアプリケーションを作成した段階では、application.cssに *= require_tree .という記述があり、これによってCSSファイルを読み込んでいます。SCSSを使用する際は、ファイルの拡張子をscssに変更した上で、@importでファイルを読み込みます。この時の、requireと@importはどう違うのか、それぞれのインポートの仕組みを踏まえて答えてください。",
+                    point:"@importとrequireの違いを知っているか",
+                    title:"@importと、requireの違い",
+                    answer: "requireはRailsのアセットパイプラインの仕組みを使ってファイルをインポートする。アセットパイプラインは、cssファイルやJavaScriptのファイルを１つにまとめ、圧縮することで処理速度を早くするための仕組み。sprocketsというgemがこの機能を担っている。それに対して@importはscssが用意しているメソッド。そのため、application.scssと拡張子を変更しないと使えない。また、application.scssからscssファイルをインポートするために使用する。",
+                    type_problem: 1,judge_problem1:3,judge_problem2:3,judge_problem3:3,judge_problem4:3,judge_problem5:3,select_problem1:"選択なし",select_problem2:"選択なし",select_problem3:"選択なし",select_problem4:"選択なし",select_problem5:"選択なし",user_id: 1},
+                  ])
+User.create!([
+                  {email:'hogehoge@hoge.com',password: 'hugahuga',name: "hoge", image: open("#{Rails.root}/db/fixtures/img1.jpeg")},
+                  {email:'aaa@aaa',password: 123456,name: "テストユーザーくん", image: open("#{Rails.root}/db/fixtures/img2.jpeg")},
+                  ])

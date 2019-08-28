@@ -21,7 +21,7 @@ header{
   margin-top: 40px;
   height: 100px;
     &__mypage{
-      padding:0 10px 0 0;
+      padding:20px 60px 0 0;
       width: 90%;
       text-align: right;
     }
@@ -36,7 +36,7 @@ header{
 }
 // 検索フォーム
 input.main-right__search-box {
-  width: 90%;
+  width: 80%;
   height: 40px;
   padding-left: 20px;
 }
@@ -48,10 +48,14 @@ input.main-right__search-box {
   display: inline-block;
   width: 100%;
 }
-.col-xs-6.d-xl-none.search-box {
+.col-xs-8.d-xl-none.search-box {
   width: 50%;
-  margin: 40px 0 0 220px;
+  margin: 40px 0 0 100px;
   display: inline-block;
+}
+
+.col-xs-4.d-xl-none.lists {
+  text-align: center;
 }
 // ヘッダーのボックスリスト
 .card.header {margin: 40px 0 0 50px;

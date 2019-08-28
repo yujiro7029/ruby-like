@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_125857) do
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
     t.text "point", null: false
+    t.text "answer", null: false
     t.string "title", null: false
     t.integer "type_problem", null: false
     t.integer "judge_problem1", null: false
@@ -101,5 +102,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_125857) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+
 
 end

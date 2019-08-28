@@ -56,8 +56,8 @@
       #hidden
         .from-boxs__box
           = f.select :type_problem,[2]
-      .from-boxs__box
-        = f.submit "送信",class:"from-boxs__box__start-buttom"
+          = f.text_area :answer, value:"選択問題のため記入なし"
+      = f.submit "送信",class:"from-boxs__box__start-buttom"
   
   %h2.from-boxs__back 
     =link_to "戻る", :back,class:"from-boxs__back"

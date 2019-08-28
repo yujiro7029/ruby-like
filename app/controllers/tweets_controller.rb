@@ -82,6 +82,7 @@ private
   def tweet_params
     params.require(:tweet).permit(
       :content,
+      :answer,
       :point,:title,
       :type_problem,
       :select_problem1,

@@ -3,6 +3,7 @@ class CreateTweets < ActiveRecord::Migration[5.2]
     create_table :tweets do |t|
       t.text :content, null: false
       t.text :point, null: false
+      t.text :answer, null: false
       t.string :title, null: false
       t.integer :type_problem, null: false
       t.integer :judge_problem1, null: false
