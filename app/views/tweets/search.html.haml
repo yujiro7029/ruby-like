@@ -2,9 +2,8 @@
   %p.flash= flash[:notice]
 .container-fluid
   .detail-boxs
-    %h2=search_judgment
-    %p=search_count
+    %h2.serach=search_judgment
+    %p.serach=search_count
     - if  @tweet_search.present?
       = render partial:'details-display',collection:@tweet_search,as:"tweet"
-    .answer-button
-      =render partial:"answer-button"
+
