@@ -1,3 +1,10 @@
+
+.login 
+  %p ログイン用アドレスaaa@aaa
+  %pパスワード: 123456 
+  %p 初期値を入力。そのままログインください
+
+
 .container-fluid
   .from.from-box
     %h2.from__title  Log in
@@ -5,10 +12,10 @@
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .from-boxs__box__titles__require 必須
         .from__boxs__field
-          = f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email",class:"from__boxs__field"
+          = f.email_field :email, autofocus: true,value:"aaa@aaa", autocomplete: "email",placeholder:"email",class:"from__boxs__field"
         .from-boxs__box__titles__require 必須
         .from__boxs__field
-          = f.password_field :password, autocomplete: "current-password",placeholder:"password",class:"from__boxs__field"
+          = f.password_field :password,value:123456, autocomplete: "current-password",placeholder:"password",class:"from__boxs__field"
 
         .from__boxs__buttom
           = f.submit "ログイン",class:"from__boxs__buttom"

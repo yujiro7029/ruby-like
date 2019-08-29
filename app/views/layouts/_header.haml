@@ -20,28 +20,37 @@
           .main-right__mypage
             =link_to "新規登録",new_user_registration_path
             =link_to "ログイン",new_user_session_path
+  / 携帯画面
   .row
     .col-xs-12.d-xl-none.lists.menu
-      .card.header
-        #collapseListGroupHeading1.card-header{:role => "tab"}
-          %h5.mb-0
-            %a.collapsed.text-body{"aria-controls" => "collapseListGroup1", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#collapseListGroup1", :role => "button"}MENU
-        #collapseListGroup1.collapse{"aria-expanded" => "false", "aria-labelledby" => "collapseListGroupHeading1", :role => "tabpanel"}
-          %ul.list-group.list-group-flush
-            =form_tag search_tweets_path,method: :get,class:"list-group-item" do
-              = text_field :page,:name, placeholder:"問題を検索"
-              = button_tag  class:"search-box__buttom" do
+      .NavMenu
+        %ul 
+          %li
+            =form_tag search_tweets_path,method: :get do
+              = text_field :page,:name, placeholder:"問題を検索",class:"from-serach"
+              = button_tag do
                 =fa_icon("search search-icon")
-            -if user_signed_in?
-              %li.list-group-item=link_to "マイページ",users_path,class:"dropdown-item"
-              %li.list-group-item=link_to "問題の投稿",new_tweet_path,class:"dropdown-item"
-            -else
-              %li.list-group-item=link_to "新規登録",new_user_registration_path,class:"dropdown-item"
-              %li.list-group-item=link_to "ログイン",new_user_session_path,class:"dropdown-item"
+          - if user_signed_in?
+            %li
+              =link_to "マイページ",users_path,class:"dropdown-item"
+            %li
+              =link_to "問題の投稿",new_tweet_path,class:"dropdown-item"
+          - else
+            %li
+              =link_to "新規登録",new_user_registration_path,class:"dropdown-item"
+            %li
+              =link_to "ログイン",new_user_session_path,class:"dropdown-item"
+      / ハンバーガーメニュー部分
+      .Toggle
+        %span
+        %span
+        %span
 
-            
+
+
     .breadcrumbs-box
       = breadcrumbs separator: " &rsaquo; " 
    
+
 
 
