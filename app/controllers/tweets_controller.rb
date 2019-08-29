@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
   before_action :find_answer_result,only:[:show]
   before_action :find_answer_result,only:[:show]
   before_action :set_tweet,only:[:new,:select,:description]
-  before_action :authenticate_user!,except:[:index,:show,:select_problem,:description_problem,:new_tweet]
+  before_action :authenticate_user!,except:[:index,:show,:select_problem,:description_problem,:new_tweet,:search]
   before_action :calculate,only:[:show]
 
 
