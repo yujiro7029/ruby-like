@@ -1,6 +1,9 @@
+
 .container-fluid
-  %h2.title-name 記述問題をピックアップ 
   .detail-boxs
-    = render partial:'details-display',collection:@description_problem,as:"tweet"
-  %h2.from-boxs__back 
-    =link_to "戻る", :back,class:"from-boxs__back"
+    %h2.title-name 記述問題をピックアップ 
+    .row
+      =render partial:'details-display',collection:@description_problem,as:"tweet"
+    %h2.from-boxs__back 
+      =link_to "戻る", :back,class:"from-boxs__back"
+

@@ -1,12 +1,19 @@
-.details-box
-  .details-box__text
-    %p.details-box__text=tweet.title
-  .details-box__option
-    - if user_signed_in? && (tweet.user_id == current_user&.id) 
-      = link_to tweet_path(tweet.id), method: :delete,class:"details-box__option__box", data: {confirm: '本当に削除しますか?',cancel: 'やめる',commit: '削除する'},title: '削除確認' do
-        =fa_icon("trash",class:"details-box__option__box__text-delete")
-      = link_to edit_tweet_path(tweet.id),class:"details-box__option__box" do
-        =fa_icon("edit",class:"details-box__option__box__text-edit")
-    = link_to "詳細", tweet_path(tweet.id),class:"details-box__option__box__text-anawer"
-    =fa_icon("heart",class:"details-box__option__box__text-like")
-    %span.details-box__option__box__text-like=tweet.likes.count
+.col-xs-12.col-xl-6
+  .problem-box
+    - if  AnswerResult.where(tweet_id: tweet.id,user_id: current_user&.id).first.present? ||  Answer.where(tweet_id: tweet.id,user_id: current_user&.id).first.present?
+      .item-sold-out-small-badge
+        .sold-small-text
+          Answered
+    - else
+      .item-sold-out-small-badge-none
+    .problem-box__text
+      %p.problem-box__text=tweet.title
+    .problem-box__option
+      - if user_signed_in? && (tweet.user_id == current_user&.id) 
+        = link_to tweet_path(tweet.id), method: :delete,class:"problem-box__option__box", data: {confirm: '本当に削除しますか?',cancel: 'やめる',commit: '削除する'},title: '削除確認' do
+          =fa_icon("trash",class:"problem-box__option__box__text-delete")
+        = link_to edit_tweet_path(tweet.id),class:"problem-box__option__box" do
+          =fa_icon("edit",class:"problem-box__option__box__text-edit")
+      = link_to "詳細", tweet_path(tweet.id),class:"problem-box__option__box__text-anawer"
+      =fa_icon("heart",class:"problem-box__option__box__text-like")
+      %span.problem-box__option__box__text-like=tweet.likes.count
