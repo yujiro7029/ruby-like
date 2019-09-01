@@ -1,12 +1,14 @@
 
-.login 
-  %p ログイン用アドレスaaa@aaa
-  %pパスワード: 123456 
-  %p 初期値を入力。そのままログインください
 
-
+ 
+- if flash[:notice]
+  %p.flash= flash[:notice]
 .container-fluid
   .from.from-box
+    %p ログイン用アドレスaaa@aaa
+    %pパスワード: 123456 
+    %p 初期値を入力。そのままログインください
+    
     %h2.from__title  Log in
     .from__boxs
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
