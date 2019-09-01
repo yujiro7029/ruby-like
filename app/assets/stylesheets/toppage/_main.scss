@@ -1,6 +1,5 @@
 
 .problem-box{
-  height:250px;
   font-weight: bold;
   color: #6091d3;/*文字色*/
   background: #FFF;
@@ -8,7 +7,7 @@
   border-radius: 10px;/*角の丸み*/
   margin: 40px 0 40px 0;
     &__text{
-      height:200px;
+      min-height: 100px;
       padding:20px 5px 0 5px;
       text-align: center;
       word-break:break-all;
@@ -130,6 +129,7 @@ p.answer-button__text {
 @media(max-width:1200px){
   h2.title-name {
     font-size: 70px;
+    margin: 350px 0 0 0 ;
   }
   .problem-box{
     font-size: 30px;
@@ -137,7 +137,7 @@ p.answer-button__text {
     min-height: 400px;
   }
   .problem-box__text {
-    min-height: 320px;
+    min-height: 200px;
   }
 
   p.title-option {

@@ -110,8 +110,8 @@ a#flag_judgment {
 // コメントボタン
 .list-boxs__comment-buttom {
   display: inline-block;
-  line-height: 2;
-  width: 40%;
+  line-height: 3;
+  width: 70%;
   margin: 40px auto;
   background-color: blanchedalmond;
 }
@@ -125,6 +125,7 @@ a.list-boxs__comment-buttom {
 @media(max-width:1200px){
   .list-boxs{
     font-size: 30px;
+    margin-top: 250px;
   }
 
 
@@ -155,5 +156,8 @@ a.list-boxs__comment-buttom {
       font-weight: bold;
       width: 100%;
       line-height: 3;
+  }
+  .list-boxs__head__user-image {
+    display:none;
   }
 }

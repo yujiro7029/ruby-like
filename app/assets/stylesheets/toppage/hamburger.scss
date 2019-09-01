@@ -24,30 +24,30 @@
    list-style-type: none;
    padding: 0;
    width: 100%;
-   border-bottom: 1px dotted #333;
+   border-bottom: 1px dotted gray;
   }
   
   .NavMenu ul li:last-child{
    padding-bottom: 0;
-   border-bottom: none; /*最後のメニュー項目のみ下線を消す*/
+  
   }
   
   /*トグルボタンが押されたときに付与するクラス*/
 .NavMenu.active{
-  transform: translateY(0%); /*ナビを上に隠す*/
+  transform: translateY(52%); /*ナビを上に隠す*/
   }
 
   /*トグルボタンのスタイルを指定*/
-.Toggle {
-  display: block;
-  position: fixed;    /* bodyに対しての絶対位置指定 */
-  right: 43px;
-  top: 42px;
-  width: 42px;
-  height: 42px;
-  cursor: pointer;
-  z-index: 3;
-}
+  .Toggle {
+    display: block;
+    position: fixed;
+    right: 100px;
+    top: 90px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    z-index: 3;
+  }
 
 .Toggle span {
   display: block;

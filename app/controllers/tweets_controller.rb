@@ -2,7 +2,6 @@ class TweetsController < ApplicationController
 
   before_action :find_tweet,only:[:update,:show,:edit,:destroy]
   before_action :find_answer_result,only:[:show]
-  before_action :find_answer_result,only:[:show]
   before_action :set_tweet,only:[:new,:select,:description]
   before_action :authenticate_user!,except:[:index,:show,:select_problem,:description_problem,:new_tweet,:search]
   before_action :calculate,only:[:show]
@@ -32,7 +31,7 @@ class TweetsController < ApplicationController
   
 
   def show
-   @image = @tweet.user.image
+    @image = @tweet.user.image
     @comments = Comment.where(tweet_id: @tweet.id).order("RAND()").limit(3)
     @result = @correct_answer.count.to_f / (@number.count).round(1) if @correct_answer.present? &&  @number.present?
    

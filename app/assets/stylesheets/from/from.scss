@@ -41,6 +41,33 @@
     }
 }
 
+// 回答済かどうか
+.item-sold-out-small-badge {
+  position: relative;
+  border-width: 180px 180px 0 0;  
+  border-color: #ea352d transparent;
+  width: 0;
+  border-style: solid;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.item-sold-out-small-badge .sold-small-text {
+  font-size: 25px;
+  top: -130px;
+  position: absolute;
+  left: 0;
+  transform: rotate(-45deg);
+  letter-spacing: 2px;
+  font-weight: 600;
+  z-index: 2;
+  color: white;
+}
+.item-sold-out-small-badge-none{
+  height:180px;
+}
+
+
 h2.from-boxs__title {
   text-align: -webkit-left;
   font-weight: bold;
@@ -63,7 +90,7 @@ h2.from-boxs__back {
   background-color: gray;
   line-height: 3;
   margin:20px auto;
-  width: 200px;
+  width: 50%;
 }
 a.from-boxs__back {
   color: white;
@@ -82,10 +109,10 @@ p.from-boxs__title {
 // selectフォーム
 .select-boxs{
   text-align: center;
-  margin:100px 0 0 0;
+  margin:100px auto;
+  width: 70%;
   font-size: 30px;
     &__box{
-      text-align: -webkit-center;
     }
 }
 
@@ -101,7 +128,7 @@ h2.select-boxs__box__link {
   color: white;
   width: 500px;
   text-align: center;
-  margin:50px 0px 50px 0px;
+  margin: 50px auto;
   border-radius: 40px;
 }
 
@@ -267,17 +294,23 @@ table tr:last-child td:last-child {
 }
 
 @media(max-width:1200px){
+  .list-boxs__comments {
+    margin-top: 250px;
+  }
   .from-boxs{
     font-size: 30px;
     width: 100%;
+    margin-top: 250px;
+   
   }
   h2.from-boxs__back {
     font-size: 30px;
-    width: 80%;
+    width: 60%;
   }
   .from.from-box{
     font-size: 30px;
     width: 80%;
+    margin-top: 250px;
   }
   label.custom-file-label{
     font-size: 25px;
@@ -314,7 +347,18 @@ table tr:last-child td:last-child {
   input.from-boxs__box__start-buttom {
     line-height: 3;
   }
-  
+
+  .from-boxs__answer-boxs {
+    margin-top: 250px;
+  }
+
+  input#answer_result_result {
+    width: 60px;
+    height: 60px;
+  }
+  .select-boxs{
+    margin-top:400px; 
+  }
   
 }
 

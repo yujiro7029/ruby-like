@@ -1,5 +1,11 @@
 .col-xs-12.col-xl-3
   .problem-box
+    - if  (tweet.answer_results.present?) ||  (tweet.answers.present?)
+      .item-sold-out-small-badge
+        .sold-small-text
+          Answered
+    - else
+      .item-sold-out-small-badge-none
     .problem-box__text
       %p.problem-box__text=tweet.title
     .problem-box__option
@@ -11,4 +17,5 @@
       = link_to "詳細", tweet_path(tweet.id),class:"problem-box__option__box__text-anawer"
       =fa_icon("heart",class:"problem-box__option__box__text-like")
       %span.problem-box__option__box__text-like=tweet.likes.count
-    
+
+        
