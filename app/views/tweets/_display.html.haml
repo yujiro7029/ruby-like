@@ -1,11 +1,12 @@
 .col-xs-12.col-xl-3
   .problem-box
-    - if  (tweet.answer_results.present?) ||  (tweet.answers.present?)
+    - if  (tweet.answer_results.present?) ||  (tweet.answers.present?) && (tweet.answer_results.first.user_id == current_user.id) 
       .item-sold-out-small-badge
         .sold-small-text
           Answered
     - else
       .item-sold-out-small-badge-none
+ 
     .problem-box__text
       %p.problem-box__text=tweet.title
     .problem-box__option
